@@ -1,0 +1,1667 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Our Team - ISTE PESCE</title>
+    <link rel="icon" href="images/iste logo.jpeg" type="image/jpeg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <style>
+      /* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+  background: linear-gradient(
+    135deg,
+    #0f172a 0%,
+    #1e293b 30%,
+    #334155 60%,
+    #475569 100%
+  );
+  color: #ffffff;
+  line-height: 1.7;
+  overflow-x: hidden;
+  position: relative;
+}
+/* Navbar */
+      .navbar {
+        background: rgba(15, 23, 42, 0.95);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        padding: 1rem 2rem;
+        transition: all 0.3s ease;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        gap: 1rem;
+      }
+
+      .logo-img {
+        width: 60px;
+        height: 60px;
+      }
+
+      .logo:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 25px rgba(99, 102, 241, 0.4);
+      }
+
+      .navbar .site-title {
+        font-family: "Playfair Display", serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #ffffff;
+        letter-spacing: -0.5px;
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+      }
+
+      .nav-links a {
+        color: #e2e8f0;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+      }
+
+      .nav-links a:hover {
+        color: #6366f1;
+        background: rgba(99, 102, 241, 0.1);
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: rgba(15, 23, 42, 0.95);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 0.5rem 0;
+        min-width: 200px;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      }
+
+      .dropdown:hover .dropdown-menu {
+        display: block;
+      }
+
+      .dropdown-menu li {
+        list-style: none;
+      }
+
+      .dropdown-menu a {
+        display: block;
+        padding: 0.75rem 1.5rem;
+        color: #e2e8f0;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .dropdown-menu a:hover {
+        background: rgba(99, 102, 241, 0.1);
+        color: #6366f1;
+      }
+.hero-section {
+  min-height: 350px;
+  padding: 120px 2rem 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.1) 0%,
+    rgba(139, 92, 246, 0.1) 100%
+  );
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.hero-section h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-section p {
+  font-size: 1.25rem;
+  color: #cbd5e1;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+.team-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  margin-top: 1.5rem;
+}
+.tab-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  outline: none;
+  color: #e2e8f0;
+  padding: 0.7rem 2rem;
+  border-radius: 25px;
+  font-weight: 500;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+.tab-btn.active,
+.tab-btn:hover {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+}
+.main-content {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.tab-section {
+  display: none;
+  animation: fadeInUp 0.7s;
+}
+.tab-section.active {
+  display: block;
+}
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  justify-content: center;
+}
+.team-member {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.team-member:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+.member-image {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  position: relative;
+  overflow: hidden;
+  border: 4px solid rgba(99, 102, 241, 0.3);
+  transition: all 0.3s ease;
+}
+.member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.team-member:hover .member-image {
+  border-color: #6366f1;
+  transform: scale(1.05);
+}
+.member-name {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #f1f5f9;
+}
+.member-role {
+  color: #6366f1;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+.member-description {
+  color: #cbd5e1;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+.member-expertise {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.expertise-tag {
+  background: rgba(99, 102, 241, 0.1);
+  color: #6366f1;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
+/* Classes for centering last row items */
+.center-single {
+  justify-self: center !important;
+  grid-column: 1 / -1 !important;
+  max-width: 300px !important;
+}
+.center-two-row {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  justify-content: center;
+  gap: 2rem !important;
+}
+/* Core Member Styling */
+.core-member {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border-color: #4f46e5;
+  box-shadow: 0 10px 40px rgba(99, 102, 241, 0.5);
+  color: #fff;
+}
+.core-member .member-name,
+.core-member .member-role,
+.core-member .member-description,
+.core-member .expertise-tag {
+  color: #e0e7ff;
+}
+/* Section subtitle style */
+.section-subtitle {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  color: #a78bfa;
+  text-align: center;
+  margin: 2rem 0 1.5rem;
+  border-bottom: 2px solid #a78bfa;
+  display: inline-block;
+  padding-bottom: 0.3rem;
+  letter-spacing: 0.5px;
+}
+/* Stats Section */
+.stats-section {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+.stat-number {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #6366f1;
+  margin-bottom: 0.5rem;
+}
+.stat-label {
+  color: #cbd5e1;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+footer {
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  text-align: center;
+  margin-top: 4rem;
+  font-size: 1rem;
+  color: #808080;
+}
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+.social-link {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.social-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+}
+.social-link img {
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+}
+@media (max-width: 900px) {
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+  .main-content {
+    padding: 2rem 1rem;
+  }
+  .team-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+/* Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <div id="navbar-placeholder"></div>
+
+    <section class="hero-section fade-in">
+      <h1>Meet Our Team</h1>
+      <p>
+        Discover the passionate individuals behind ISTE PESCE who are dedicated
+        to advancing technical education and fostering innovation.<br />
+        Our diverse team brings a wealth of experience, creativity, and
+        drive—working collaboratively to elevate our student chapter and impact.
+      </p>
+    </section>
+
+    <div class="team-tabs">
+      <button class="tab-btn active" data-target="faculty-chapters">
+        Faculty Chapters
+      </button>
+      <button class="tab-btn" data-target="student-chapters">
+        Student Chapters
+      </button>
+    </div>
+
+    <div class="main-content">
+  <div id="faculty-chapters" class="tab-section active fade-in">
+    <h2 class="section-subtitle">Core Faculty</h2>
+    <div class="team-grid">
+      <div class="team-member core-member">
+        <div class="member-image">
+          <img src=".jpg" alt="Nayaka Sir" />
+        </div>
+        <h3 class="member-name">Dr. Nayaka S R</h3>
+        <div class="member-role">ISTE Chairperson</div>
+        <p class="member-description">
+          Oversees ISTE initiatives and guides the chapter's vision.
+        </p>
+        <div class="member-expertise">
+          <span class="expertise-tag">Leadership</span>
+          <span class="expertise-tag">Mentorship</span>
+        </div>
+      </div>
+      <div class="team-member core-member">
+        <div class="member-image">
+          <img src="Dr. Lakshmi P S.JPG" alt="Lakshmi" />
+        </div>
+        <h3 class="member-name">Dr. Lakshmi P S</h3>
+        <div class="member-role">ISTE Secretary</div>
+        <p class="member-description">
+          Coordinates faculty activities and documentation.
+        </p>
+        <div class="member-expertise">
+          <span class="expertise-tag">Coordination</span>
+          <span class="expertise-tag">Administration</span>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section-subtitle">Faculty</h2>
+    <div class="team-grid">
+      <div class="team-member">
+        <div class="member-image">
+          <img src="" alt="Dr N L Murali Krishna" />
+        </div>
+        <h3 class="member-name">Dr N L Murali Krishna</h3>
+        <div class="member-role">Principal</div>
+        <p class="member-description">
+          Leads the institution and supports ISTE initiatives.
+        </p>
+        <div class="member-expertise">
+          <span class="expertise-tag">Leadership</span>
+          <span class="expertise-tag">Administration</span>
+        </div>
+      </div>
+
+      <div class="team-member">
+        <div class="member-image">
+          <img src="" alt="Dr Vinay S" />
+        </div>
+        <h3 class="member-name">Dr Vinay S</h3>
+        <div class="member-role">Vice-Principal</div>
+        <p class="member-description">
+          Assists in institutional leadership and ISTE coordination.
+        </p>
+        <div class="member-expertise">
+          <span class="expertise-tag">Administration</span>
+          <span class="expertise-tag">Mentorship</span>
+        </div>
+      </div>
+
+      <div class="team-member">
+        <div class="member-image">
+          <img src="" alt="Mahendra Kumar B R" />
+        </div>
+        <h3 class="member-name">Mahendra Kumar B R</h3>
+        <div class="member-role">Dept of MBA</div>
+        <p class="member-description">
+          Mentors students in business administration and event management.
+        </p>
+        <div class="member-expertise">
+          <span class="expertise-tag">Business Administration</span>
+          <span class="expertise-tag">Event Management</span>
+        </div>
+      </div>
+
+      <div class="team-member">
+        <div class="member-image">
+          <img src="Dr. Bramesh S M.JPG" alt="Dr Bramesh S M" />
+        </div>
+        <h3 class="member-name">Dr Bramesh S M</h3>
+        <div class="member-role">Dept of IS</div>
+        <p class="member-description">
+          Supports students in information science and technical workshops.
+        </p>
+        <div class="member-expertise">
+          <span class="expertise-tag">Information Science</span>
+          <span class="expertise-tag">Technical Workshops</span>
+        </div>
+      </div>
+
+      <div class="team-member">
+        <div class="member-image">
+          <img src="" alt="Dr Thejas Urs G" />
+        </div>
+        <h3 class="member-name">Dr Thejas Urs G</h3>
+        <div class="member-role">Dept of Physics</div>
+        <p class="member-description">
+          Facilitates physics-related projects and research initiatives.
+        </p>
+        <div class="member-expertise">
+          <span class="expertise-tag">Physics</span>
+          <span class="expertise-tag">Research</span>
+        </div>
+      </div>
+
+      <div class="team-member">
+        <div class="member-image">
+          <img src="" alt="Dr Charan Kumar H C" />
+        </div>
+        <h3 class="member-name">Dr Charan Kumar H C</h3>
+        <div class="member-role">Dept of Chemistry</div>
+        <p class="member-description">
+          Guides chemistry research and student projects.
+        </p>
+        <div class="member-expertise">
+          <span class="expertise-tag">Chemistry</span>
+          <span class="expertise-tag">Research</span>
+        </div>
+      </div>
+
+      <div class="team-member">
+        <div class="member-image">
+          <img src="Srikanth G D.JPG" alt="Srikanth G D" />
+        </div>
+        <h3 class="member-name">Srikanth G D</h3>
+        <div class="member-role">Dept of Automobile</div>
+        <p class="member-description">
+          Mentors students in automobile engineering projects.
+        </p>
+        <div class="member-expertise">
+          <span class="expertise-tag">Automobile Engineering</span>
+          <span class="expertise-tag">Project Guidance</span>
+        </div>
+      </div>
+
+      <div class="team-member">
+        <div class="member-image">
+          <img src="Sindhushree H N.JPG" alt="Sindushree H N" />
+        </div>
+        <h3 class="member-name">Sindushree H N</h3>
+        <div class="member-role">Dept of CS</div>
+        <p class="member-description">
+          Supports computer science students in coding and projects.
+        </p>
+        <div class="member-expertise">
+          <span class="expertise-tag">Computer Science</span>
+          <span class="expertise-tag">Coding</span>
+        </div>
+      </div>
+
+      <div class="team-member">
+        <div class="member-image">
+          <img src="" alt="Shwetha S K" />
+        </div>
+        <h3 class="member-name">Shwetha S K</h3>
+        <div class="member-role">Dept of EC</div>
+        <p class="member-description">
+          Guides electronics and communication projects.
+        </p>
+        <div class="member-expertise">
+          <span class="expertise-tag">Electronics</span>
+          <span class="expertise-tag">Project Guidance</span>
+        </div>
+      </div>
+
+      <div class="team-member">
+        <div class="member-image">
+          <img src="Gaana H.JPG" alt="Gaana H" />
+        </div>
+        <h3 class="member-name">Gaana H</h3>
+        <div class="member-role">Dept of EE</div>
+        <p class="member-description">
+          Mentors electrical engineering students in technical projects.
+        </p>
+        <div class="member-expertise">
+          <span class="expertise-tag">Electrical Engineering</span>
+          <span class="expertise-tag">Technical Projects</span>
+        </div>
+      </div>
+
+      <div class="team-member">
+        <div class="member-image">
+          <img src="Archana G.JPG" alt="Archana G" />
+        </div>
+        <h3 class="member-name">Archana G</h3>
+        <div class="member-role">Dept of IP</div>
+        <p class="member-description">
+          Supports industrial and production engineering initiatives.
+        </p>
+        <div class="member-expertise">
+          <span class="expertise-tag">Industrial Engineering</span>
+          <span class="expertise-tag">Project Support</span>
+        </div>
+      </div>
+
+      <div class="team-member">
+        <div class="member-image">
+          <img src="Doddaswamy V.jpg" alt="Doddaswamy V" />
+        </div>
+        <h3 class="member-name">Doddaswamy V</h3>
+        <div class="member-role">Dept of Mechanical</div>
+        <p class="member-description">
+          Guides mechanical engineering students in projects and workshops.
+        </p>
+        <div class="member-expertise">
+          <span class="expertise-tag">Mechanical Engineering</span>
+          <span class="expertise-tag">Workshops</span>
+        </div>
+      </div>
+
+      <div class="team-member">
+        <div class="member-image">
+          <img src="Shanthi Swaroop M S.jpg" alt="Shanthi Swaroop M S" />
+        </div>
+        <h3 class="member-name">Shanthi Swaroop M S</h3>
+        <div class="member-role">Dept of AIML</div>
+        <p class="member-description">
+          Mentors students in AI and machine learning projects.
+        </p>
+        <div class="member-expertise">
+          <span class="expertise-tag">AI/ML</span>
+          <span class="expertise-tag">Project Guidance</span>
+        </div>
+      </div>
+
+      <div class="team-member">
+        <div class="member-image">
+          <img src="" alt="Jayashree S P" />
+        </div>
+        <h3 class="member-name">Jayashree S P</h3>
+        <div class="member-role">Dept of CSBS</div>
+        <p class="member-description">
+          Supports computer science and business systems education.
+        </p>
+        <div class="member-expertise">
+          <span class="expertise-tag">CSBS</span>
+          <span class="expertise-tag">Education</span>
+        </div>
+      </div>
+
+      <div class="team-member">
+        <div class="member-image">
+          <img src="Shilpa S.JPG" alt="Shilpa S" />
+        </div>
+        <h3 class="member-name">Shilpa S</h3>
+        <div class="member-role">Dept of CSDS</div>
+        <p class="member-description">
+          Guides students in computer science and data science projects.
+        </p>
+        <div class="member-expertise">
+          <span class="expertise-tag">Data Science</span>
+          <span class="expertise-tag">Project Guidance</span>
+        </div>
+      </div>
+
+      <div class="team-member">
+        <div class="member-image">
+          <img src="Indra C.JPG" alt="Indra C" />
+        </div>
+        <h3 class="member-name">Indra C</h3>
+        <div class="member-role">Dept of MCA</div>
+        <p class="member-description">
+          Mentors MCA students in software development projects.
+        </p>
+        <div class="member-expertise">
+          <span class="expertise-tag">Software Development</span>
+          <span class="expertise-tag">Mentorship</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div id="student-chapters" class="tab-section fade-in">
+        <div class="team-grid">
+          <!-- Core members here -->
+          <div class="team-member core-member">
+            <div class="member-image">
+              <img src="Mahantesh P.jpg" alt="Mahantesh P" />
+            </div>
+            <h3 class="member-name">Mahantesh P</h3>
+            <div class="member-role">ISTE President</div>
+            <p class="member-description">
+              Leading student initiatives and organizing technical events with
+              innovative approaches.
+            </p>
+            <div class="member-expertise">
+              <span class="expertise-tag">Leadership</span>
+              <span class="expertise-tag">Event Management</span>
+              <span class="expertise-tag">Technical Skills</span>
+            </div>
+            <div class="member-contact">
+              <a
+                href="https://instagram.com/student_leader_username"
+                target="_blank"
+                class="contact-link"
+                aria-label="Instagram"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://linkedin.com/in/student_leader_username"
+                target="_blank"
+                class="contact-link"
+                aria-label="LinkedIn"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member core-member">
+            <div class="member-image">
+              <img src="Gowtham C K.jpg" alt="Gowtham" />
+            </div>
+            <h3 class="member-name">Gowtham C K</h3>
+            <div class="member-role">ISTE Vice President</div>
+            <p class="member-description">
+              Passionate about emerging technologies and fostering innovation
+              among students.
+            </p>
+            <div class="member-expertise">
+              <span class="expertise-tag">Innovation</span>
+              <span class="expertise-tag">Event Organizing</span>
+              <span class="expertise-tag">Community Building</span>
+            </div>
+            <div class="member-contact">
+              <a
+                href="https://instagram.com/tech_enthusiast_username"
+                target="_blank"
+                class="contact-link"
+                aria-label="Instagram"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://linkedin.com/in/tech_enthusiast_username"
+                target="_blank"
+                class="contact-link"
+                aria-label="LinkedIn"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member core-member">
+            <div class="member-image">
+              <img src="Kaushik C.jpg" alt="Kaushik" />
+            </div>
+            <h3 class="member-name">Kaushik C</h3>
+            <div class="member-role">ISTE Secretary</div>
+            <p class="member-description">
+              Leading code reviews and developer mentorship.
+            </p>
+            <div class="member-expertise">
+              <span class="expertise-tag">Mentoring</span>
+              <span class="expertise-tag">Code Review</span>
+            </div>
+            <div class="member-contact">
+              <a href="#" class="contact-link" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="contact-link" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member core-member">
+            <div class="member-image">
+              <img src="Vijetha B C.jpg" alt="Vijetha" />
+            </div>
+            <h3 class="member-name">Vijetha B C</h3>
+            <div class="member-role">ISTE Secretary</div>
+            <p class="member-description">
+              Coordinating student projects and internships.
+            </p>
+            <div class="member-expertise">
+              <span class="expertise-tag">Project Management</span>
+              <span class="expertise-tag">Internships</span>
+            </div>
+            <div class="member-contact">
+              <a href="#" class="contact-link" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="contact-link" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member core-member">
+            <div class="member-image">
+              <img src="D Hariharan.jpg" alt="Dharihar" />
+            </div>
+            <h3 class="member-name">D Hariharan</h3>
+            <div class="member-role">ISTE Co-Secretary</div>
+            <p class="member-description">
+              Creating educational content and social media strategies.
+            </p>
+            <div class="member-expertise">
+              <span class="expertise-tag">Content Creation</span>
+              <span class="expertise-tag">Social Media</span>
+            </div>
+            <div class="member-contact">
+              <a href="#" class="contact-link" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="contact-link" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member core-member">
+            <div class="member-image">
+              <img src="DeenaDayal B K.jpg" alt="DeenaDayal" />
+            </div>
+            <h3 class="member-name">DeenaDayal B K</h3>
+            <div class="member-role">ISTE Treasurer</div>
+            <p class="member-description">
+              Managing finances and budgeting for club activities.
+            </p>
+            <div class="member-expertise">
+              <span class="expertise-tag">Budgeting</span>
+              <span class="expertise-tag">Management</span>
+            </div>
+            <div class="member-contact">
+              <a href="#" class="contact-link" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="contact-link" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="section-subtitle">Organizing Team</h2>
+        <div class="team-grid organizing-team">
+          <!-- Organizing Team member cards go here -->
+          <div class="team-member">
+            <div class="member-image">
+              <img src="Yashwanth H T.jpg" alt="Yahwanth H T" />
+            </div>
+            <h3 class="member-name">Yahwanth H T</h3>
+            <div class="member-role">Student Member</div>
+            <p class="member-description">
+              Active participant in club activities and projects.
+            </p>
+            <div class="member-expertise">
+              <span class="expertise-tag">Coding</span>
+              <span class="expertise-tag">Workshops</span>
+            </div>
+            <div class="member-contact">
+              <a
+                href="https://instagram.com/member7"
+                target="_blank"
+                aria-label="Instagram"
+                class="contact-link"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://linkedin.com/in/member7"
+                target="_blank"
+                aria-label="LinkedIn"
+                class="contact-link"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+          <div class="team-member">
+            <div class="member-image">
+              <img src="Sharanya K.jpg" alt="Sharanya" />
+            </div>
+            <h3 class="member-name">Sharanya K</h3>
+            <div class="member-role">Student Member</div>
+            <p class="member-description">
+              Active participant in club activities and projects.
+            </p>
+            <div class="member-expertise">
+              <span class="expertise-tag">Coding</span>
+              <span class="expertise-tag">Workshops</span>
+            </div>
+            <div class="member-contact">
+              <a
+                href="https://instagram.com/member8"
+                target="_blank"
+                aria-label="Instagram"
+                class="contact-link"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://linkedin.com/in/member8"
+                target="_blank"
+                aria-label="LinkedIn"
+                class="contact-link"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+          <div class="team-member">
+            <div class="member-image">
+              <img src="Lakshmi R.jpg" alt="Lakshmi" />
+            </div>
+            <h3 class="member-name">Lakshmi R</h3>
+            <div class="member-role">Student Member</div>
+            <p class="member-description">
+              Active participant in club activities and projects.
+            </p>
+            <div class="member-expertise">
+              <span class="expertise-tag">Coding</span>
+              <span class="expertise-tag">Workshops</span>
+            </div>
+            <div class="member-contact">
+              <a
+                href="https://instagram.com/member9"
+                target="_blank"
+                aria-label="Instagram"
+                class="contact-link"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://linkedin.com/in/member9"
+                target="_blank"
+                aria-label="LinkedIn"
+                class="contact-link"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+          <div class="team-member">
+            <div class="member-image">
+              <img src="Prajwal S Shetty.jpg" alt="Prajwal" />
+            </div>
+            <h3 class="member-name">Prajwal S Shetty</h3>
+            <div class="member-role">Student Member</div>
+            <p class="member-description">
+              Active participant in club activities and projects.
+            </p>
+            <div class="member-expertise">
+              <span class="expertise-tag">Coding</span>
+              <span class="expertise-tag">Workshops</span>
+            </div>
+            <div class="member-contact">
+              <a
+                href="https://instagram.com/member10"
+                target="_blank"
+                aria-label="Instagram"
+                class="contact-link"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://linkedin.com/in/member10"
+                target="_blank"
+                aria-label="LinkedIn"
+                class="contact-link"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Other sections can go here -->
+
+        <h2 class="section-subtitle">Technical Team</h2>
+        <div class="team-grid">
+          <!-- Technical Team member cards -->
+          <div class="team-member">
+            <div class="member-image">
+              <img src="Suman M L.jpg" alt="Suman M L" />
+            </div>
+            <h3 class="member-name">Suman M L</h3>
+            <div class="member-role">Student Member</div>
+            <p class="member-description">
+              Oversees technical projects and leads code reviews.
+            </p>
+            <div class="member-expertise">
+              <span class="expertise-tag">Project Management</span>
+              <span class="expertise-tag">Code Review</span>
+              <span class="expertise-tag">Mentoring</span>
+            </div>
+            <div class="member-contact">
+              <a href="#" class="contact-link" aria-label="Instagram Profile">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="contact-link" aria-label="LinkedIn Profile">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="member-image">
+              <img src="Nischitha M C.jpg" alt="Nischitha M C" />
+            </div>
+            <h3 class="member-name">Nischitha M C</h3>
+            <div class="member-role">Student Member</div>
+            <p class="member-description">
+              Focuses on front-end development and UI improvements.
+            </p>
+            <div class="member-expertise">
+              <span class="expertise-tag">JavaScript</span>
+              <span class="expertise-tag">React</span>
+              <span class="expertise-tag">UI Design</span>
+            </div>
+            <div class="member-contact">
+              <a href="#" class="contact-link" aria-label="Instagram Profile">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="contact-link" aria-label="LinkedIn Profile">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="member-image">
+              <img src="Nayana T P.jpg" alt="Nayana T P" />
+            </div>
+            <h3 class="member-name">Nayana T P</h3>
+            <div class="member-role">Student Member</div>
+            <p class="member-description">
+              Specializes in server-side logic and database management.
+            </p>
+            <div class="member-expertise">
+              <span class="expertise-tag">Node.js</span>
+              <span class="expertise-tag">Express</span>
+              <span class="expertise-tag">MongoDB</span>
+            </div>
+            <div class="member-contact">
+              <a href="#" class="contact-link" aria-label="Instagram Profile">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="contact-link" aria-label="LinkedIn Profile">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member center-single">
+            <div class="member-image">
+              <img src="Chinmay J.jpg" alt="Chinmay J" />
+            </div>
+            <h3 class="member-name">Chinmay J</h3>
+            <div class="member-role">Student Member</div>
+            <p class="member-description">
+              Works across front-end and backend to deliver seamless solutions.
+            </p>
+            <div class="member-expertise">
+              <span class="expertise-tag">Full Stack</span>
+              <span class="expertise-tag">JavaScript</span>
+              <span class="expertise-tag">APIs</span>
+            </div>
+            <div class="member-contact">
+              <a href="#" class="contact-link" aria-label="Instagram Profile">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="contact-link" aria-label="LinkedIn Profile">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="section-subtitle">Designing Team</h2>
+        <div class="team-grid">
+          <!-- Designing Team member cards -->
+          <div class="team-member">
+            <div class="member-image">
+              <img src="Yuktha Bhuvana J M.jpg" alt="Yuktha Bhuvana J M" />
+            </div>
+            <h3 class="member-name">Yuktha Bhuvana J M</h3>
+            <div class="member-role">Student Member</div>
+            <p class="member-description">
+              Creates user-friendly designs and interactive prototypes.
+            </p>
+            <div class="member-expertise">
+              <span class="expertise-tag">UI Design</span>
+              <span class="expertise-tag">UX Research</span>
+              <span class="expertise-tag">Prototyping</span>
+            </div>
+            <div class="member-contact">
+              <a href="#" class="contact-link" aria-label="Instagram Profile">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="contact-link" aria-label="LinkedIn Profile">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="member-image">
+              <img src="Brinda Hemanth.jpg" alt="Brinda Hemanth" />
+            </div>
+            <h3 class="member-name">Brinda Hemanth</h3>
+            <div class="member-role">Student Member</div>
+            <p class="member-description">
+              Specializes in brand identity and graphic marketing materials.
+            </p>
+            <div class="member-expertise">
+              <span class="expertise-tag">Branding</span>
+              <span class="expertise-tag">Adobe Illustrator</span>
+              <span class="expertise-tag">Photoshop</span>
+            </div>
+            <div class="member-contact">
+              <a href="#" class="contact-link" aria-label="Instagram Profile">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="contact-link" aria-label="LinkedIn Profile">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="member-image">
+              <img src="Bindushree S.jpg" alt="Bindushree S" />
+            </div>
+            <h3 class="member-name">Bindushree S</h3>
+            <div class="member-role">Student Member</div>
+            <p class="member-description">
+              Creates engaging animations and video content.
+            </p>
+            <div class="member-expertise">
+              <span class="expertise-tag">After Effects</span>
+              <span class="expertise-tag">Video Editing</span>
+              <span class="expertise-tag">Animation</span>
+            </div>
+            <div class="member-contact">
+              <a href="#" class="contact-link" aria-label="Instagram Profile">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="contact-link" aria-label="LinkedIn Profile">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="section-subtitle">Outreach Team</h2>
+        <div class="team-grid">
+          <!-- Outreach Team member cards -->
+          <div class="team-member">
+            <div class="member-image">
+              <img src="Maanya J.jpg" alt="Maanya J" />
+            </div>
+            <h3 class="member-name">Maanya J</h3>
+            <div class="member-role">Student Member</div>
+            <p class="member-description">
+              Coordinates outreach programs and harmonizes community efforts.
+            </p>
+            <div class="member-expertise">
+              <span class="expertise-tag">Coordination</span>
+              <span class="expertise-tag">Networking</span>
+              <span class="expertise-tag">Community</span>
+            </div>
+            <div class="member-contact">
+              <a href="#" class="contact-link" aria-label="Instagram Profile"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="contact-link" aria-label="LinkedIn Profile"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="member-image">
+              <img src="Preethi K M.jpg" alt="Preethi K M" />
+            </div>
+            <h3 class="member-name">Preethi K M</h3>
+            <div class="member-role">Student Memberr</div>
+            <p class="member-description">
+              Engages with local organizations and manages communications.
+            </p>
+            <div class="member-expertise">
+              <span class="expertise-tag">Community</span>
+              <span class="expertise-tag">Communication</span>
+            </div>
+            <div class="member-contact">
+              <a href="#" class="contact-link" aria-label="Instagram Profile"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="contact-link" aria-label="LinkedIn Profile"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="member-image">
+              <img src="Yuktha S.jpg" alt="Yuktha S" />
+            </div>
+            <h3 class="member-name">Yuktha S</h3>
+            <div class="member-role">Student Member</div>
+            <p class="member-description">
+              Helps organize and promote outreach events.
+            </p>
+            <div class="member-expertise">
+              <span class="expertise-tag">Event Planning</span>
+              <span class="expertise-tag">Promotion</span>
+            </div>
+            <div class="member-contact">
+              <a href="#" class="contact-link" aria-label="Instagram Profile"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="contact-link" aria-label="LinkedIn Profile"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="team-member center-single">
+            <div class="member-image">
+              <img src="Sohan N U.jpg" alt="Sohan N U" />
+            </div>
+            <h3 class="member-name">Sohan N U</h3>
+            <div class="member-role">Student Member</div>
+            <p class="member-description">
+              Supports outreach initiatives and volunteer recruitment.
+            </p>
+            <div class="member-expertise">
+              <span class="expertise-tag">Volunteering</span>
+              <span class="expertise-tag">Recruitment</span>
+            </div>
+            <div class="member-contact">
+              <a href="#" class="contact-link" aria-label="Instagram Profile"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="contact-link" aria-label="LinkedIn Profile"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="section-subtitle">Cultural Team</h2>
+        <div class="team-grid">
+          <!-- Cultural Team member cards -->
+          <div class="team-member">
+            <div class="member-image">
+              <img src="" alt="Dhanush S Yadav" />
+            </div>
+            <h3 class="member-name">Dhanush S Yadav</h3>
+            <div class="member-role">Student Member</div>
+            <p class="member-description">
+              Organizes cultural activities and events for community engagement.
+            </p>
+            <div class="member-expertise">
+              <span class="expertise-tag">Event Planning</span>
+              <span class="expertise-tag">Community Engagement</span>
+            </div>
+            <div class="member-contact">
+              <a href="#" class="contact-link" aria-label="Instagram Profile"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="contact-link" aria-label="LinkedIn Profile"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="member-image">
+              <img src="U Nandini.jpg" alt="U Nandini" />
+            </div>
+            <h3 class="member-name">U Nandini</h3>
+            <div class="member-role">Student Memberr</div>
+            <p class="member-description">
+              Assists in organizing cultural festivals and workshops.
+            </p>
+            <div class="member-expertise">
+              <span class="expertise-tag">Coordination</span>
+              <span class="expertise-tag">Workshops</span>
+            </div>
+            <div class="member-contact">
+              <a href="#" class="contact-link" aria-label="Instagram Profile"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="contact-link" aria-label="LinkedIn Profile"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="member-image">
+              <img src="" alt="Ganavi A S" />
+            </div>
+            <h3 class="member-name">Ganavi A S</h3>
+            <div class="member-role">Student Member</div>
+            <p class="member-description">
+              Designs cultural presentations and promotes creative expression.
+            </p>
+            <div class="member-expertise">
+              <span class="expertise-tag">Creative Design</span>
+              <span class="expertise-tag">Presentation</span>
+            </div>
+            <div class="member-contact">
+              <a href="#" class="contact-link" aria-label="Instagram Profile"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="contact-link" aria-label="LinkedIn Profile"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="team-member center-single">
+            <div class="member-image">
+              <img src="Cultural_Member3.jpg" alt="Chiranth S Shetty" />
+            </div>
+            <h3 class="member-name">Chiranth S Shetty</h3>
+            <div class="member-role">Student Member</div>
+            <p class="member-description">
+              Supports cultural events and engages new members.
+            </p>
+            <div class="member-expertise">
+              <span class="expertise-tag">Volunteering</span>
+              <span class="expertise-tag">Member Engagement</span>
+            </div>
+            <div class="member-contact">
+              <a href="#" class="contact-link" aria-label="Instagram Profile"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="contact-link" aria-label="LinkedIn Profile"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="section-subtitle">Documentation Team</h2>
+        <div class="team-grid">
+          <!-- Documentation Team member cards -->
+          <div class="team-member">
+            <div class="member-image">
+              <img src="Nirupama B.jpg" alt="Nirupama B" />
+            </div>
+            <h3 class="member-name">Nirupama B</h3>
+            <div class="member-role">Student Member</div>
+            <p class="member-description">
+              Oversees documentation processes and maintains knowledge bases.
+            </p>
+            <div class="member-expertise">
+              <span class="expertise-tag">Technical Writing</span>
+              <span class="expertise-tag">Editing</span>
+              <span class="expertise-tag">Knowledge Management</span>
+            </div>
+            <div class="member-contact">
+              <a href="#" class="contact-link" aria-label="Instagram Profile">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="contact-link" aria-label="LinkedIn Profile">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="member-image">
+              <img src="Sahana S Gudennavar.jpg" alt="Sahana S Gudennavar" />
+            </div>
+            <h3 class="member-name">Sahana S Gudennavar</h3>
+            <div class="member-role">Student Member</div>
+            <p class="member-description">
+              Creates comprehensive guides and process documentation.
+            </p>
+            <div class="member-expertise">
+              <span class="expertise-tag">Manuals</span>
+              <span class="expertise-tag">Research</span>
+              <span class="expertise-tag">Editing</span>
+            </div>
+            <div class="member-contact">
+              <a href="#" class="contact-link" aria-label="Instagram Profile">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="contact-link" aria-label="LinkedIn Profile">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="member-image">
+              <img src="Bhavana N S.jpg" alt="Bhavana N S" />
+            </div>
+            <h3 class="member-name">Bhavana N S</h3>
+            <div class="member-role">Student Member</div>
+            <p class="member-description">
+              Edits and formats documentation content for clarity and quality.
+            </p>
+            <div class="member-expertise">
+              <span class="expertise-tag">Editing</span>
+              <span class="expertise-tag">Proofreading</span>
+              <span class="expertise-tag">Quality Assurance</span>
+            </div>
+            <div class="member-contact">
+              <a href="#" class="contact-link" aria-label="Instagram Profile">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="contact-link" aria-label="LinkedIn Profile">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="section-subtitle">E-Sports</h2>
+        <div class="team-grid">
+          <!-- E-Sports team member cards -->
+          <div class="team-member center-single">
+            <div class="member-image">
+              <img src="Shashank Swaroop G.jpg" alt="Shashank Swaroop G" />
+            </div>
+            <h3 class="member-name">Shashank Swaroop G</h3>
+            <div class="member-role">Student Member</div>
+            <p class="member-description">
+              Leading the team in competitive gaming and e-sports tournaments.
+            </p>
+            <div class="member-expertise">
+              <span class="expertise-tag">Strategy</span>
+              <span class="expertise-tag">Coordination</span>
+              <span class="expertise-tag">Gaming Skills</span>
+            </div>
+            <div class="member-contact">
+              <a href="#" class="contact-link" aria-label="Instagram Profile">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="contact-link" aria-label="LinkedIn Profile">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="section-subtitle">Social-Media Team</h2>
+        <div class="team-grid">
+          <!-- Social media team member cards -->
+          <div class="team-member">
+            <div class="member-image">
+              <img src="socialmedia_lead.jpg" alt="Social Media Lead" />
+            </div>
+            <h3 class="member-name">Alex Johnson</h3>
+            <div class="member-role">Social Media Lead</div>
+            <p class="member-description">
+              Oversees all social media strategies and content creation.
+            </p>
+            <div class="member-expertise">
+              <span class="expertise-tag">Content Creation</span>
+              <span class="expertise-tag">Campaign Strategy</span>
+              <span class="expertise-tag">Analytics</span>
+            </div>
+            <div class="member-contact">
+              <a
+                href="https://instagram.com/alexjohnson"
+                target="_blank"
+                class="contact-link"
+                aria-label="Instagram"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://linkedin.com/in/alexjohnson"
+                target="_blank"
+                class="contact-link"
+                aria-label="LinkedIn"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="member-image">
+              <img src="socialmedia_manager.jpg" alt="Social Media Manager" />
+            </div>
+            <h3 class="member-name">Maria Smith</h3>
+            <div class="member-role">Social Media Manager</div>
+            <p class="member-description">
+              Manages daily posts and boosts community engagement.
+            </p>
+            <div class="member-expertise">
+              <span class="expertise-tag">Scheduling</span>
+              <span class="expertise-tag">Engagement</span>
+              <span class="expertise-tag">Growth</span>
+            </div>
+            <div class="member-contact">
+              <a
+                href="https://instagram.com/mariasmith"
+                target="_blank"
+                class="contact-link"
+                aria-label="Instagram"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://linkedin.com/in/mariasmith"
+                target="_blank"
+                class="contact-link"
+                aria-label="LinkedIn"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <div class="stats-section fade-in">
+        <h2 class="section-title">Team Statistics</h2>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">25+</div>
+            <div class="stat-label">Active Members</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">Events Organized</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Students Reached</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">10+</div>
+            <div class="stat-label">Industry Partners</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/pesce.iste/" target="_blank" class="social-link">
+                <img src="instalogo.png" alt="Instagram">
+            </a>
+            <a href="https://www.linkedin.com/company/iste-pesce/" target="_blank" class="social-link">
+                <img src="linkedinlogo.png" alt="LinkedIn">
+            </a>
+            <a href="mailto:iste@pesce.ac.in" class="social-link">
+                <img src="maillogo.png" alt="Gmail">
+            </a>
+      </div>
+      <p class="footer-text">© 2025 ISTE PESCE. All rights reserved.</p>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+      // Tab button logic to switch between tabs and recalculate centering
+document.querySelectorAll(".tab-btn").forEach((btn) => {
+  btn.addEventListener("click", function () {
+    // Remove active class from all tab buttons and sections
+    document.querySelectorAll(".tab-btn").forEach((x) => x.classList.remove("active"));
+    document.querySelectorAll(".tab-section").forEach((x) => x.classList.remove("active"));
+
+    // Activate clicked tab button and corresponding section
+    btn.classList.add("active");
+    document.getElementById(btn.dataset.target).classList.add("active");
+
+    // Recalculate last row centering after tab switch
+    centerLastRowMembers();
+  });
+});
+
+// Function to center last row members if only 1 or 2 exist
+function centerLastRowMembers() {
+  const grids = document.querySelectorAll(".team-grid");
+  grids.forEach((grid) => {
+    const members = Array.from(grid.children).filter((c) =>
+      c.classList.contains("team-member")
+    );
+    const columnsCount = 3; // Matches CSS grid-template-columns setting
+
+    // Remove any previous centering classes
+    members.forEach((m) => m.classList.remove("center-single"));
+    grid.classList.remove("center-two-row");
+
+    const remainder = members.length % columnsCount;
+    if (remainder === 1) {
+      // Single item in last row: span entire width and center
+      members[members.length - 1].classList.add("center-single");
+    } else if (remainder === 2) {
+      // Two items in last row: set grid to 2 columns to center them nicely
+      grid.classList.add("center-two-row");
+    }
+  });
+}
+
+// Run centering logic on initial load and window resize events
+document.addEventListener("DOMContentLoaded", centerLastRowMembers);
+window.addEventListener("resize", centerLastRowMembers);
+
+    </script>
+
+    <style>
+      /* Additional CSS for center-single */
+      .center-single {
+        justify-self: center !important;
+        grid-column: 1 / -1 !important;
+        max-width: 300px !important;
+      }
+    </style>
+
+    <div class="particle-bg" id="particle-bg"></div>
+  </body>
+</html>

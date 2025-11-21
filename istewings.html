@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ISTE WINGS</title>
+    <link rel="icon" href="images/iste logo.jpeg" type="image/jpeg" />
+    <!-- Google Fonts for Montserrat (headings) and Roboto (body, nav) -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:700,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="navbar.css" />
+    <style>
+      html,
+      body {
+        height: 100%;
+        min-height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        font-family: "Roboto", sans-serif;
+        background: #000;
+        color: #fff;
+        position: relative;
+        overflow-x: hidden;
+      }
+      #vanta-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+      }
+      /* Navbar */
+      .navbar {
+        background: #171717;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+        position: relative;
+        z-index: 2;
+        flex-shrink: 0;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        gap: 1rem;
+      }
+
+      .logo-img {
+        width: 60px;
+        height: 60px;
+      }
+
+      .logo:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 25px rgba(99, 102, 241, 0.4);
+      }
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+      }
+      .nav-links li {
+        position: relative;
+      }
+      .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        transition: color 0.3s;
+        padding: 7px 0;
+        display: inline-block;
+      }
+      .nav-links a:hover {
+        color: #c4beb4;
+      }
+      .dropdown {
+        position: relative;
+      }
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        background: rgba(34, 34, 34, 0.96);
+        backdrop-filter: blur(10px);
+        list-style: none;
+        padding: 10px 0;
+        margin-top: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.28);
+        top: 100%;
+        left: 0;
+        width: 200px;
+        z-index: 1100;
+        overflow: hidden;
+      }
+      .dropdown-menu li {
+        padding: 0;
+      }
+      .dropdown-menu a {
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        padding: 12px 20px;
+        transition: all 0.3s;
+      }
+      .dropdown-menu a:hover {
+        background: #c4beb4;
+        color: #111 !important;
+        padding-left: 25px;
+      }
+      .dropdown:hover .dropdown-menu,
+      .dropdown:focus-within .dropdown-menu {
+        display: block;
+      }
+
+      /* Elegant Coming Soon Modal */
+      .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(8px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2500;
+        pointer-events: auto;
+        opacity: 0;
+        animation: fadeIn 0.8s ease-out forwards;
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+
+      .modal-content {
+        background: rgba(23, 23, 23, 0.95);
+        border: 1px solid rgba(196, 190, 180, 0.2);
+        border-radius: 20px;
+        padding: 60px 40px;
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        pointer-events: auto;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+        transform: translateY(30px);
+        animation: slideUp 0.8s ease-out forwards;
+        max-width: 500px;
+        width: 90%;
+      }
+
+      @keyframes slideUp {
+        to {
+          transform: translateY(0);
+        }
+      }
+
+      .modal-content h1 {
+        font-family: "Montserrat", Arial, sans-serif;
+        font-size: 2.8rem;
+        color: #c4beb4;
+        letter-spacing: 2px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+      }
+
+      .modal-content p {
+        font-family: "Roboto", Arial, sans-serif;
+        font-size: 1.1rem;
+        color: #e0e0e0;
+        font-weight: 400;
+        line-height: 1.6;
+        margin: 0;
+        max-width: 400px;
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        color: #c4beb4;
+        font-size: 24px;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .modal-close:hover {
+        background: rgba(196, 190, 180, 0.1);
+        color: #fff;
+        transform: scale(1.1);
+      }
+
+      /* Social at Bottom */
+      .bottom-section {
+        flex-shrink: 0;
+        width: 100%;
+        margin-top: auto;
+        margin-bottom: 0;
+      }
+      .social-row {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 34px;
+        margin-bottom: 10px;
+        margin-top: 0;
+      }
+      .social-row a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: #222;
+        box-shadow: 0 2px 6px #111a;
+        transition: background 0.25s, transform 0.22s;
+      }
+      .social-row a:hover {
+        background: #c4beb4;
+        transform: scale(1.12);
+      }
+      .social-row img {
+        width: 26px;
+        height: 26px;
+        object-fit: contain;
+        display: block;
+        filter: grayscale(100%) brightness(1.2) drop-shadow(0 2px 8px #fff6);
+        transition: filter 0.25s;
+      }
+      .social-row a:hover img {
+        filter: none;
+      }
+
+      /* Footer, centered, always at bottom */
+      .footer {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 18px 16px 12px 16px;
+        background: transparent;
+        color: #fff;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 1rem;
+        text-align: center;
+        box-shadow: 0 -2px 5px rgba(255, 255, 255, 0.07);
+      }
+      .footer-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      .footer-brand {
+        text-align: center;
+        width: 100%;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+      }
+      .site-title {
+        font-family: "Playfair Display", serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #ffffff;
+        letter-spacing: -0.5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="vanta-bg"></div>
+
+    <header>
+      <!-- Navigation -->
+      <nav class="navbar">
+          <a href="index.html" class="brand">
+              <img src="Iste logo perfect background removed.png" alt="ISTE Logo" class="logo-img" />
+              <span class="site-title">ISTE</span>
+          </a>
+          
+          <ul class="nav-links" id="navLinks">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="event.html">Events</a></li>
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle">Student Chapters</a>
+                  <ul class="dropdown-menu">
+                      <li><a href="istewings.html" class="active">ISTE WINGS</a></li>
+                      <li><a href="istearcs.html">ISTE ARCS</a></li>
+                  </ul>
+              </li>
+              <li><a href="our_team.html">Team</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="aboutus.html">About</a></li>
+          </ul>
+          
+          <div class="mobile-menu-toggle" id="mobileToggle">
+              <span></span>
+              <span></span>
+              <span></span>
+          </div>
+      </nav>
+    </header>
+
+    <!-- Coming Soon Modal -->
+    <div
+      class="modal-overlay"
+      id="coming-soon-modal"
+      tabindex="0"
+      aria-modal="true"
+      role="dialog"
+      aria-label="Coming Soon"
+    >
+      <div class="modal-content">
+        <button class="modal-close" id="modal-close" aria-label="Close modal">
+          ×
+        </button>
+        <h1>Coming Soon</h1>
+        <p>
+          Exciting opportunities and events are on their way.<br />Stay tuned
+          for updates!
+        </p>
+      </div>
+    </div>
+
+    <main style="flex-grow: 1; padding-top: 70px">
+      <!-- Insert your real content here if needed -->
+    </main>
+
+    <div class="bottom-section">
+      <div class="social-row">
+        <a
+          href="https://www.instagram.com/pesce.iste/"
+          target="_blank"
+          class="social-link"
+        >
+          <img src="instalogo.png" alt="Instagram" />
+        </a>
+        <a
+          href="https://www.linkedin.com/company/iste-pesce/"
+          target="_blank"
+          class="social-link"
+        >
+          <img src="linkedinlogo.png" alt="LinkedIn" />
+        </a>
+        <a href="mailto:iste@pesce.ac.in" class="social-link">
+          <img src="maillogo.png" alt="Gmail" />
+        </a>
+      </div>
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-brand">
+            <p>&copy; 2025 ISTE PESCE. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Vanta.js globe effect script -->
+    <script src="main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+    <script>
+      VANTA.GLOBE({
+        el: "#vanta-bg",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.0,
+        minWidth: 200.0,
+        scale: 1.0,
+        scaleMobile: 1.0,
+        color: 0xc4beb4,
+        backgroundColor: 0x0,
+      });
+    </script>
+
+    <!-- Modal functionality -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const modal = document.getElementById("coming-soon-modal");
+        const closeBtn = document.getElementById("modal-close");
+
+        // Close modal when close button is clicked
+        closeBtn.addEventListener("click", function () {
+          modal.style.opacity = "0";
+          setTimeout(() => {
+            modal.style.display = "none";
+          }, 300);
+        });
+
+        // Close modal when clicking outside the modal content
+        modal.addEventListener("click", function (e) {
+          if (e.target === modal) {
+            modal.style.opacity = "0";
+            setTimeout(() => {
+              modal.style.display = "none";
+            }, 300);
+          }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && modal.style.display !== "none") {
+            modal.style.opacity = "0";
+            setTimeout(() => {
+              modal.style.display = "none";
+            }, 300);
+          }
+        });
+      });
+    </script>
+    <script src="navbar-script.js"></script>
+  </body>
+</html>

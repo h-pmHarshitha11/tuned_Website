@@ -1,0 +1,61 @@
+<!-- Universal Navigation Component -->
+<nav class="navbar">
+    <a href="index.html" class="brand">
+        <img src="Iste logo perfect background removed.png" alt="ISTE Logo" class="logo-img" />
+        <span class="site-title">ISTE</span>
+    </a>
+    
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="event.html">Events</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle">Student Chapters</a>
+            <ul class="dropdown-menu">
+                <li><a href="istewings.html">ISTE WINGS</a></li>
+                <li><a href="istearcs.html">ISTE ARCS</a></li>
+            </ul>
+        </li>
+        <li><a href="our_team.html">Team</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="aboutus.html">About</a></li>
+    </ul>
+    
+    <div class="mobile-menu-toggle" id="mobileToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav>
+
+<script>
+// Mobile menu toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navLinks = document.getElementById('navLinks');
+    
+    if (mobileToggle && navLinks) {
+        mobileToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            mobileToggle.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        navLinks.addEventListener('click', function(e) {
+            if (e.target.tagName === 'A') {
+                navLinks.classList.remove('active');
+                mobileToggle.classList.remove('active');
+            }
+        });
+    }
+    
+    // Set active page
+    const currentPage = window.location.pathname.split('/').pop();
+    const navLinks = document.querySelectorAll('.nav-links a');
+    
+    navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+        }
+    });
+});
+</script>
