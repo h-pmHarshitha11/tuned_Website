@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Styles -->
-        <link rel="stylesheet" href="styles.css">
-        <!-- Navbar CSS will be loaded programmatically -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="navbar.css">
     
     <style>
         :root {
@@ -812,28 +812,45 @@
             padding: 0 2rem;
         }
         
-        .footer-links {
+        .footer-social {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
         }
         
-        .footer-links a {
-            color: #a0aec0;
-            text-decoration: none;
-            transition: var(--transition);
+        .footer-social a {
+            width: 48px;
+            height: 48px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #7c3aed, #8b5cf6);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 12px 25px rgba(124, 58, 237, 0.35);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
-        .footer-links a:hover {
-            color: var(--accent-color);
+        .footer-social a:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 35px rgba(124, 58, 237, 0.45);
+        }
+        
+        .footer-social img {
+            width: 22px;
+            height: 22px;
         }
         
         .footer-bottom {
             border-top: 1px solid #2d3748;
             padding-top: 2rem;
             color: #a0aec0;
+        }
+        
+        .footer-bottom p {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin: 0;
         }
         
         /* Responsive Styles */
@@ -943,35 +960,38 @@
 </head>
 <body>
     <!-- Navigation -->
-    <div id="navbar"></div>
-
-<script>
-            (function loadNavbar(){
-                fetch("navbar.html")
-                    .then(res => res.text())
-                    .then(data => {
-                        document.getElementById("navbar").innerHTML = data;
-
-                        if (!document.querySelector('link[href="navbar.css"]')) {
-                            const link = document.createElement('link');
-                            link.rel = 'stylesheet';
-                            link.href = 'navbar.css';
-                            document.head.appendChild(link);
-                        }
-
-                        if (!document.querySelector('script[data-navbar-script]')) {
-                            const s = document.createElement('script');
-                            s.src = 'navbar-script.js';
-                            s.setAttribute('data-navbar-script', '');
-                            s.onload = () => document.dispatchEvent(new Event('navbarInserted'));
-                            document.body.appendChild(s);
-                        } else {
-                            document.dispatchEvent(new Event('navbarInserted'));
-                        }
-                    });
-            })();
-</script>
-
+    <nav class="navbar">
+        <a href="index.html" class="brand">
+            <img src="Iste logo perfect background removed.png" alt="ISTE Logo" class="logo-img" />
+            <span class="site-title">ISTE</span>
+        </a>
+        
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="event.html" class="active">Events</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle">Student Chapters</a>
+                <ul class="dropdown-menu">
+                    <li><a href="istewings.html">ISTE WINGS</a></li>
+                    <li><a href="istearcs.html">ISTE ARCS</a></li>
+                </ul>
+            </li>
+            <li><a href="our_team.html">Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="aboutus.html">About</a></li>
+        </ul>
+        
+        <div class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon" id="themeIcon"></i>
+            <span id="themeText">Dark</span>
+        </div>
+        
+        <div class="mobile-menu-toggle" id="mobileToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -1238,21 +1258,57 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="aboutus.html">About</a>
-                <a href="event.html">Events</a>
-                <a href="our_team.html">Team</a>
-                <a href="contact.html">Contact</a>
+            <div class="footer-social">
+                <a href="https://www.instagram.com/pesce.iste/" target="_blank" rel="noopener" aria-label="Instagram">
+                    <img src="instalogo.png" alt="Instagram logo">
+                </a>
+                <a href="https://www.linkedin.com/company/iste-pesce/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <img src="linkedinlogo.png" alt="LinkedIn logo">
+                </a>
+                <a href="mailto:iste@pesce.ac.in" aria-label="Email">
+                    <img src="maillogo.png" alt="Email icon">
+                </a>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 ISTE PESCE. All rights reserved. | Empowering Technical Excellence</p>
+                <p>&copy; 2025 ISTE PESCE. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-        <!-- Scripts -->
-        <!-- Navbar script loads and initializes theme/navigation when navbar is inserted -->
+    <!-- Scripts -->
+    <script src="navbar-script.js"></script>
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const themeText = document.getElementById('themeText');
+        const body = document.body;
+        
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            body.setAttribute('data-theme', savedTheme);
+            updateThemeIcon(savedTheme);
+        }
+        
+        themeToggle.addEventListener('click', function() {
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+        
+        function updateThemeIcon(theme) {
+            if (theme === 'dark') {
+                themeIcon.className = 'fas fa-sun';
+                themeText.textContent = 'Light';
+            } else {
+                themeIcon.className = 'fas fa-moon';
+                themeText.textContent = 'Dark';
+            }
+        }
         
         // Animation on Scroll
         const observerOptions = {
