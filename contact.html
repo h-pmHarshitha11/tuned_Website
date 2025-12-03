@@ -801,10 +801,40 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero hero-animated">
+        <div class="hero-orbit hero-orbit-1"></div>
+        <div class="hero-orbit hero-orbit-2"></div>
+        <div class="hero-grid"></div>
+        <div class="hero-particles">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <div class="hero-content">
-            <h1>Get In Touch</h1>
-            <p>We'd love to hear from you. Reach out to us for any questions, suggestions, or collaboration opportunities.</p>
+            <div class="hero-pill">Connect with ISTE</div>
+            <h1 class="hero-title">Get In Touch</h1>
+            <p class="hero-subtitle">
+                Collaborations, doubts, or event ideas — our team is just a message away on campus, mail, or socials.
+            </p>
+            <div class="hero-highlights">
+                <div class="hero-highlight-card tilt-card">
+                    <i class="fas fa-instagram hero-highlight-icon"></i>
+                    <div>
+                        <h3>Stay in the Loop</h3>
+                        <p>Daily stories, reels, and behind‑the‑scenes from ISTE PESCE.</p>
+                    </div>
+                </div>
+                <div class="hero-highlight-card tilt-card">
+                    <i class="fas fa-envelope hero-highlight-icon"></i>
+                    <div>
+                        <h3>Official Queries</h3>
+                        <p>Write to us at iste@pesce.ac.in for formal communication.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -821,7 +851,7 @@
                     <h3>Let's Connect</h3>
                     <p>We're always excited to hear from students, faculty, and industry professionals. Whether you have questions about our events, want to collaborate, or just want to say hello, we'd love to connect with you.</p>
                     
-                    <div class="contact-item fade-in">
+                    <div class="contact-item fade-in tilt-card">
                         <div class="contact-icon">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
@@ -831,7 +861,7 @@
                         </div>
                     </div>
                     
-                    <div class="contact-item fade-in brand-card">
+                    <div class="contact-item fade-in brand-card tilt-card">
                         <div class="contact-icon">
                             <img src="instalogo.png" alt="Instagram logo">
                         </div>
@@ -842,7 +872,7 @@
                         </div>
                     </div>
                     
-                    <div class="contact-item fade-in brand-card">
+                    <div class="contact-item fade-in brand-card tilt-card">
                         <div class="contact-icon">
                             <img src="linkedinlogo.png" alt="LinkedIn logo">
                         </div>
@@ -853,7 +883,7 @@
                         </div>
                     </div>
                     
-                    <div class="contact-item fade-in brand-card">
+                    <div class="contact-item fade-in brand-card tilt-card">
                         <div class="contact-icon">
                             <img src="maillogo.png" alt="Mail icon">
                         </div>
@@ -864,7 +894,7 @@
                         </div>
                     </div>
                     
-                    <div class="contact-item fade-in">
+                    <div class="contact-item fade-in tilt-card">
                         <div class="contact-icon">
                             <i class="fas fa-clock"></i>
                         </div>
@@ -935,19 +965,19 @@
     <section class="stats">
         <div class="container">
             <div class="stats-grid">
-                <div class="stat-item fade-in">
+                <div class="stat-item fade-in tilt-card light-surface">
                     <h3 class="counter" data-target="500">0</h3>
                     <p>Active Members</p>
                 </div>
-                <div class="stat-item fade-in">
+                <div class="stat-item fade-in tilt-card light-surface">
                     <h3 class="counter" data-target="50">0</h3>
                     <p>Events Organized</p>
                 </div>
-                <div class="stat-item fade-in">
+                <div class="stat-item fade-in tilt-card light-surface">
                     <h3 class="counter" data-target="25">0</h3>
                     <p>Years of Excellence</p>
                 </div>
-                <div class="stat-item fade-in">
+                <div class="stat-item fade-in tilt-card light-surface">
                     <h3 class="counter" data-target="1000">0</h3>
                     <p>Students Benefited</p>
                 </div>
@@ -977,6 +1007,7 @@
 
     <!-- Scripts -->
     <script src="navbar-script.js"></script>
+    <script src="hero-effects.js"></script>
     <script>
         // Theme Toggle
         const themeToggle = document.getElementById('themeToggle');

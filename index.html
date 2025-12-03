@@ -375,18 +375,49 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero hero-animated">
+        <div class="hero-orbit hero-orbit-1"></div>
+        <div class="hero-orbit hero-orbit-2"></div>
+        <div class="hero-grid"></div>
+        <div class="hero-particles">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <div class="hero-content">
-            <h1>Indian Society for Technical Education</h1>
-            <p>Empowering the next generation of engineers and technologists through innovation, collaboration, and excellence in technical education.</p>
+            <div class="hero-pill">ISTE · PESCE</div>
+            <h1 class="hero-title">Indian Society for Technical Education</h1>
+            <p class="hero-subtitle">
+                Empowering young engineers through <span>innovation</span>, <span>community</span>, and
+                <span>hands‑on experiences</span>.
+            </p>
+            <div class="hero-highlights">
+                <div class="hero-highlight-card tilt-card">
+                    <i class="fas fa-calendar-check hero-highlight-icon"></i>
+                    <div>
+                        <h3>50+ Events</h3>
+                        <p>Hackathons, workshops, conclaves and cultural fests every year.</p>
+                    </div>
+                </div>
+                <div class="hero-highlight-card tilt-card">
+                    <i class="fas fa-users hero-highlight-icon"></i>
+                    <div>
+                        <h3>500+ Members</h3>
+                        <p>A cross‑disciplinary community of builders and leaders.</p>
+                    </div>
+                </div>
+            </div>
             <div class="cta-buttons">
-                <a href="aboutus.html" class="btn btn-primary">
-                    <i class="fas fa-info-circle"></i>
-                    Learn More
-                </a>
-                <a href="event.html" class="btn btn-secondary">
+                <a href="event.html" class="btn btn-primary">
                     <i class="fas fa-calendar"></i>
-                    View Events
+                    Explore Events
+                </a>
+                <a href="aboutus.html" class="btn btn-secondary">
+                    <i class="fas fa-circle-info"></i>
+                    Learn About ISTE
                 </a>
             </div>
         </div>
@@ -401,7 +432,7 @@
             </div>
             
             <div class="features-grid">
-                <div class="feature-card">
+                <div class="feature-card tilt-card light-surface">
                     <div class="feature-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
@@ -409,7 +440,7 @@
                     <p>Promoting excellence in technical education through innovative teaching methods and industry-relevant curriculum.</p>
                 </div>
                 
-                <div class="feature-card">
+                <div class="feature-card tilt-card light-surface">
                     <div class="feature-icon">
                         <i class="fas fa-users"></i>
                     </div>
@@ -417,7 +448,7 @@
                     <p>Creating a strong network of students, faculty, and industry professionals for collaborative learning and growth.</p>
                 </div>
                 
-                <div class="feature-card">
+                <div class="feature-card tilt-card light-surface">
                     <div class="feature-icon">
                         <i class="fas fa-lightbulb"></i>
                     </div>
@@ -425,7 +456,7 @@
                     <p>Encouraging research, innovation, and entrepreneurship among students through various programs and competitions.</p>
                 </div>
                 
-                <div class="feature-card">
+                <div class="feature-card tilt-card light-surface">
                     <div class="feature-icon">
                         <i class="fas fa-handshake"></i>
                     </div>
@@ -433,7 +464,7 @@
                     <p>Bridging the gap between academia and industry through partnerships, internships, and placement opportunities.</p>
                 </div>
                 
-                <div class="feature-card">
+                <div class="feature-card tilt-card light-surface">
                     <div class="feature-icon">
                         <i class="fas fa-trophy"></i>
                     </div>
@@ -441,7 +472,7 @@
                     <p>Providing platforms for students to showcase their talents and receive recognition for their achievements.</p>
                 </div>
                 
-                <div class="feature-card">
+                <div class="feature-card tilt-card light-surface">
                     <div class="feature-icon">
                         <i class="fas fa-globe"></i>
                     </div>
@@ -456,19 +487,19 @@
     <section class="stats">
         <div class="container">
             <div class="stats-grid">
-                <div class="stat-item">
+                <div class="stat-item tilt-card light-surface">
                     <h3 class="counter" data-target="500">0</h3>
                     <p>Active Members</p>
                 </div>
-                <div class="stat-item">
+                <div class="stat-item tilt-card light-surface">
                     <h3 class="counter" data-target="50">0</h3>
                     <p>Events Organized</p>
                 </div>
-                <div class="stat-item">
+                <div class="stat-item tilt-card light-surface">
                     <h3 class="counter" data-target="25">0</h3>
                     <p>Years of Excellence</p>
                 </div>
-                <div class="stat-item">
+                <div class="stat-item tilt-card light-surface">
                     <h3 class="counter" data-target="1000">0</h3>
                     <p>Students Benefited</p>
                 </div>
@@ -552,6 +583,7 @@
 
     <!-- Scripts -->
     <script src="script.js"></script>
+    <script src="hero-effects.js"></script>
 	<script>
         // Counter Animation
         function animateCounters() {
