@@ -762,11 +762,12 @@
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle">Student Chapters</a>
                 <ul class="dropdown-menu">
+                    <li><a href="our_team_new.html">Student Core</a></li>
                     <li><a href="istewings.html">ISTE WINGS</a></li>
-                    <li><a href="istearcs.html">ISTE ARCS</a></li>
+                    <li><a href="istearcs.html">ISTE ARCS</a></li> 
                 </ul>
             </li>
-            <li><a href="our_team.html" class="active">Team</a></li>
+            <li><a href="our_team.html" class="active">Faculty Chapter</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="aboutus.html">About</a></li>
         </ul>
@@ -784,11 +785,41 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Meet Our Team</h1>
-            <p>Discover the passionate individuals behind ISTE PESCE who are dedicated to advancing technical education and fostering innovation.</p>
+    <section class="hero hero-animated">
+        <div class="hero-orbit hero-orbit-1"></div>
+        <div class="hero-orbit hero-orbit-2"></div>
+        <div class="hero-grid"></div>
+        <div class="hero-particles">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
+        <div class="hero-content">
+            <div class="hero-pill">Core & Student Leaders</div>
+            <h1 class="hero-title">Meet Our Team</h1>
+            <p class="hero-subtitle">
+                Faculty mentors who design, execute, and scale every ISTE initiative at PESCE.
+            </p>
+        <div class="hero-highlights">
+          <div class="hero-highlight-card tilt-card">
+                    <i class="fas fa-user-tie hero-highlight-icon"></i>
+                    <div>
+                        <h3>Faculty Backbone</h3>
+                        <p>Guiding the chapter with experience, research depth, and vision.</p>
+                    </div>
+                </div>
+          <!-- <div class="hero-highlight-card tilt-card">
+                    <i class="fas fa-users-line hero-highlight-icon"></i>
+                    <div>
+                        <h3>Student Chapters</h3>
+                        <p>From tech to cultural wings, teams that keep ISTE active all year.</p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
     </section>
 
     <!-- Team Section -->
@@ -801,13 +832,13 @@
             
             <div class="team-categories fade-in">
                 <button class="category-btn active" data-category="all">All Members</button>
-                <button class="category-btn" data-category="executive">Executive Board</button>
+                <!-- <button class="category-btn" data-category="executive">Executive Board</button>
                 <button class="category-btn" data-category="core">Core Team</button>
-                <button class="category-btn" data-category="volunteers">Volunteers</button>
+                <button class="category-btn" data-category="volunteers">Volunteers</button> -->
             </div>
             
             <div class="team-grid">
-                <div class="team-member fade-in" data-category="executive">
+                <div class="team-member fade-in tilt-card" data-category="executive">
                     <div class="member-image">
                         <i class="fas fa-user-tie"></i>
                     </div>
@@ -822,7 +853,7 @@
                     </div>
                 </div>
                 
-                <div class="team-member fade-in" data-category="executive">
+                <div class="team-member fade-in tilt-card" data-category="executive">
                     <div class="member-image">
                         <i class="fas fa-user-graduate"></i>
                     </div>
@@ -837,7 +868,7 @@
                     </div>
                 </div>
                 
-                <div class="team-member fade-in" data-category="executive">
+                <div class="team-member fade-in tilt-card" data-category="executive">
                     <div class="member-image">
                         <i class="fas fa-user-graduate"></i>
                     </div>
@@ -852,7 +883,7 @@
                     </div>
                 </div>
                 
-                <div class="team-member fade-in" data-category="core">
+                <div class="team-member fade-in tilt-card" data-category="core">
                     <div class="member-image">
                         <i class="fas fa-user-graduate"></i>
                     </div>
@@ -867,7 +898,7 @@
                     </div>
                 </div>
                 
-                <div class="team-member fade-in" data-category="core">
+                <div class="team-member fade-in tilt-card" data-category="core">
                     <div class="member-image">
                         <i class="fas fa-user-graduate"></i>
                     </div>
@@ -882,7 +913,7 @@
                     </div>
                 </div>
                 
-                <div class="team-member fade-in" data-category="volunteers">
+                <div class="team-member fade-in tilt-card" data-category="volunteers">
                     <div class="member-image">
                         <i class="fas fa-user-graduate"></i>
                     </div>
@@ -909,19 +940,19 @@
             </div>
             
             <div class="faculty-grid">
-                <div class="faculty-member fade-in">
+                <div class="faculty-member fade-in tilt-card">
                     <h3>Dr. Bramesh S M</h3>
                     <p class="role">Faculty Coordinator</p>
                     <p>Expert in computer science with extensive research experience in artificial intelligence and machine learning.</p>
                 </div>
                 
-                <div class="faculty-member fade-in">
+                <div class="faculty-member fade-in tilt-card">
                     <h3>Dr. Lakshmi P S</h3>
                     <p class="role">Faculty Coordinator</p>
                     <p>Specialized in data structures and algorithms with a passion for mentoring students in competitive programming.</p>
                 </div>
                 
-                <div class="faculty-member fade-in">
+                <div class="faculty-member fade-in tilt-card">
                     <h3>Dr.Vinay S</h3>
                     <p class="role">Faculty Coordinator</p>
                     <p>Expert in software engineering and web technologies, guiding students in modern development practices.</p>
@@ -934,19 +965,19 @@
     <section class="stats">
         <div class="container">
             <div class="stats-grid">
-                <div class="stat-item fade-in">
+                <div class="stat-item fade-in tilt-card light-surface">
                     <h3 class="counter" data-target="25">0</h3>
                     <p>Team Members</p>
                 </div>
-                <div class="stat-item fade-in">
+                <div class="stat-item fade-in tilt-card light-surface">
                     <h3 class="counter" data-target="5">0</h3>
                     <p>Faculty Advisors</p>
                 </div>
-                <div class="stat-item fade-in">
+                <div class="stat-item fade-in tilt-card light-surface">
                     <h3 class="counter" data-target="100">0</h3>
                     <p>Events Organized</p>
                 </div>
-                <div class="stat-item fade-in">
+                <div class="stat-item fade-in tilt-card light-surface">
                     <h3 class="counter" data-target="500">0</h3>
                     <p>Students Mentored</p>
                 </div>
@@ -976,6 +1007,7 @@
 
     <!-- Scripts -->
     <script src="navbar-script.js"></script>
+    <script src="hero-effects.js"></script>
     <script>
         // Theme Toggle
         const themeToggle = document.getElementById('themeToggle');
