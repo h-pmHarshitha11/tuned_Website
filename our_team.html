@@ -396,10 +396,10 @@
         }
         
         .member-image {
-            height: 250px;
+            height: 270px;
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             display: flex;
-            align-items: center;
+            align-items: start;
             justify-content: center;
             color: var(--white);
             font-size: 4rem;
@@ -838,14 +838,38 @@
             </div>
             
             <div class="team-grid">
-                <div class="team-member fade-in tilt-card" data-category="executive">
+                <div class="team-member fade-in tilt-card" data-category="faculty">
                     <div class="member-image">
-                        <i class="fas fa-user-tie"></i>
+                    <!-- no src provided in original, fallback to icon -->
+                    <i class="fas fa-user"></i>
                     </div>
                     <div class="member-content">
-                        <h3 class="member-name">Dr. Thejas Urs G</h3>
-                        <p class="member-role">Faculty Advisor</p>
-                        <p class="member-description">Leading our technical education initiatives with years of experience in academia and industry.</p>
+                    <h3 class="member-name">Dr N L Murali Krishna</h3>
+                    <p class="member-role">Principal</p>
+                    <p class="member-description">
+                        Leads the institution and supports ISTE initiatives.
+                    </p>
+                    <!-- <div class="member-expertise">
+                        <span class="expertise-tag">Leadership</span>
+                        <span class="expertise-tag">Administration</span>
+                    </div> -->
+                    <div class="member-social">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="team-member fade-in tilt-card" data-category="faculty">
+                    <div class="member-image">
+                        <img src="photos/Dr.Vinay S.jpg" alt="Dr Vinay S" />
+                    </div>
+                    <div class="member-content">
+                        <h3 class="member-name">Dr Vinay S</h3>
+                        <p class="member-role">Vice-Principal</p>
+                        <p class="member-description">
+                            Assists in institutional leadership and ISTE coordination.
+                        </p>
                         <div class="member-social">
                             <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
                             <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
@@ -855,72 +879,270 @@
                 
                 <div class="team-member fade-in tilt-card" data-category="executive">
                     <div class="member-image">
-                        <i class="fas fa-user-graduate"></i>
+                        <img src="photos/Nayaka sir.jpg" alt="Nayaka Sir" />
+                    </div>
+                    <div class="member-content">
+                        <h3 class="member-name">Dr. Nayaka S R</h3>
+                        <p class="member-role">ISTE Chairperson</p>
+                        <p class="member-description">
+                            Oversees ISTE initiatives and guides the chapter's vision.
+                        </p>
+                        <div class="member-social">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member fade-in tilt-card" data-category="executive">
+                    <div class="member-image">
+                        <img src="photos/Dr. Lakshmi P S.JPG" alt="Lakshmi" />
+                    </div>
+                    <div class="member-content">
+                        <h3 class="member-name">Dr. Lakshmi P S</h3>
+                        <p class="member-role">ISTE Secretary</p>
+                        <p class="member-description">
+                            Coordinates faculty activities and documentation.
+                        </p>
+                        <div class="member-social">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="team-member fade-in tilt-card" data-category="faculty">
+                    <div class="member-image">
+                        <img src="photos/Mahendra babu.jpg" alt="Mahendra Kumar B R" />
+                    </div>
+                    <div class="member-content">
+                        <h3 class="member-name">Mahendra Kumar B R</h3>
+                        <p class="member-role">Dept of MBA</p>
+                        <p class="member-description">
+                            Mentors students in business administration and event management.
+                        </p>
+                        <div class="member-social">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member fade-in tilt-card" data-category="faculty">
+                    <div class="member-image">
+                        <img src="photos/Dr. Bramesh S M.JPG" alt="Dr Bramesh S M" />
+                    </div>
+                    <div class="member-content">
+                        <h3 class="member-name">Dr Bramesh S M</h3>
+                        <p class="member-role">Dept of IS</p>
+                        <p class="member-description">
+                            Supports students in information science and technical workshops.
+                        </p>
+                        <div class="member-social">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member fade-in tilt-card" data-category="faculty">
+                    <div class="member-image">
+                        <img src="photos/Dr Thejas Urs G.JPG" alt="Dr Thejas Urs G" />
+                    </div>
+                    <div class="member-content">
+                        <h3 class="member-name">Dr Thejas Urs G</h3>
+                        <p class="member-role">Dept of Physics</p>
+                        <p class="member-description">
+                            Facilitates physics-related projects and research initiatives.
+                        </p>
+                        <div class="member-social">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member fade-in tilt-card" data-category="faculty">
+                    <div class="member-image">
+                        <img src="photos/Charan .jpg" alt="Dr Charan Kumar H C" />
+                    </div>
+                    <div class="member-content">
+                        <h3 class="member-name">Dr Charan Kumar H C</h3>
+                        <p class="member-role">Dept of Chemistry</p>
+                        <p class="member-description">
+                            Guides chemistry research and student projects.
+                        </p>
+                        <div class="member-social">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member fade-in tilt-card" data-category="faculty">
+                    <div class="member-image">
+                        <img src="photos/Srikanth G D.JPG" alt="Srikanth G D" />
+                    </div>
+                    <div class="member-content">
+                        <h3 class="member-name">Srikanth G D</h3>
+                        <p class="member-role">Dept of Automobile</p>
+                        <p class="member-description">
+                            Mentors students in automobile engineering projects.
+                        </p>
+                        <div class="member-social">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member fade-in tilt-card" data-category="faculty">
+                    <div class="member-image">
+                        <img src="photos/Sindhushree H N.JPG" alt="Sindushree H N" />
+                    </div>
+                    <div class="member-content">
+                        <h3 class="member-name">Sindushree H N</h3>
+                        <p class="member-role">Dept of CS</p>
+                        <p class="member-description">
+                            Supports computer science students in coding and projects.
+                        </p>
+                        <div class="member-social">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member fade-in tilt-card" data-category="faculty">
+                    <div class="member-image">
+                        <img src="photos/Shwetha S K.JPG" alt="Shwetha S K" />
+                    </div>
+                    <div class="member-content">
+                        <h3 class="member-name">Shwetha S K</h3>
+                        <p class="member-role">Dept of EC</p>
+                        <p class="member-description">
+                            Guides electronics and communication projects.
+                        </p>
+                        <div class="member-social">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member fade-in tilt-card" data-category="faculty">
+                    <div class="member-image">
+                        <img src="photos/Gaana H.JPG" alt="Gaana H" />
+                    </div>
+                    <div class="member-content">
+                        <h3 class="member-name">Gaana H</h3>
+                        <p class="member-role">Dept of EE</p>
+                        <p class="member-description">
+                            Mentors electrical engineering students in technical projects.
+                        </p>
+                        <div class="member-social">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member fade-in tilt-card" data-category="faculty">
+                    <div class="member-image">
+                        <img src="photos/Archana G.JPG" alt="Archana G" />
+                    </div>
+                    <div class="member-content">
+                        <h3 class="member-name">Archana G</h3>
+                        <p class="member-role">Dept of IP</p>
+                        <p class="member-description">
+                            Supports industrial and production engineering initiatives.
+                        </p>
+                        <div class="member-social">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member fade-in tilt-card" data-category="faculty">
+                    <div class="member-image">
+                        <img src="photos/Doddaswamy V.jpg" alt="Doddaswamy V" />
+                    </div>
+                    <div class="member-content">
+                        <h3 class="member-name">Doddaswamy V</h3>
+                        <p class="member-role">Dept of Mechanical</p>
+                        <p class="member-description">
+                            Guides mechanical engineering students in projects and workshops.
+                        </p>
+                        <div class="member-social">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member fade-in tilt-card" data-category="faculty">
+                    <div class="member-image">
+                        <img src="photos/shanthi swaroop.jpg" alt="Shanthi Swaroop M S" />
                     </div>
                     <div class="member-content">
                         <h3 class="member-name">Shanthi Swaroop M S</h3>
-                        <p class="member-role">President</p>
-                        <p class="member-description">Leading the ISTE chapter with vision and dedication to technical excellence.</p>
+                        <p class="member-role">Dept of AIML</p>
+                        <p class="member-description">
+                            Mentors students in AI and machine learning projects.
+                        </p>
                         <div class="member-social">
                             <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
                             <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
                         </div>
                     </div>
                 </div>
-                
-                <div class="team-member fade-in tilt-card" data-category="executive">
+
+                <div class="team-member fade-in tilt-card" data-category="faculty">
                     <div class="member-image">
-                        <i class="fas fa-user-graduate"></i>
+                        <img src="photos/Jayashree S P.JPG" alt="Jayashree S P" />
                     </div>
                     <div class="member-content">
-                        <h3 class="member-name">Nirupama B</h3>
-                        <p class="member-role">Vice President</p>
-                        <p class="member-description">Supporting the president in organizing events and managing chapter activities.</p>
+                        <h3 class="member-name">Jayashree S P</h3>
+                        <p class="member-role">Dept of CSBS</p>
+                        <p class="member-description">
+                            Supports computer science and business systems education.
+                        </p>
                         <div class="member-social">
                             <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
                             <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
                         </div>
                     </div>
                 </div>
-                
-                <div class="team-member fade-in tilt-card" data-category="core">
+
+                <div class="team-member fade-in tilt-card" data-category="faculty">
                     <div class="member-image">
-                        <i class="fas fa-user-graduate"></i>
+                        <img src="photos/Shilpa S.JPG" alt="Shilpa S" />
                     </div>
                     <div class="member-content">
-                        <h3 class="member-name">Sohan N U</h3>
-                        <p class="member-role">Secretary</p>
-                        <p class="member-description">Managing documentation and communication for all chapter activities.</p>
+                        <h3 class="member-name">Shilpa S</h3>
+                        <p class="member-role">Dept of CSDS</p>
+                        <p class="member-description">
+                            Guides students in computer science and data science projects.
+                        </p>
                         <div class="member-social">
                             <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
                             <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
                         </div>
                     </div>
                 </div>
-                
-                <div class="team-member fade-in tilt-card" data-category="core">
+
+                <div class="team-member fade-in tilt-card" data-category="faculty">
                     <div class="member-image">
-                        <i class="fas fa-user-graduate"></i>
+                        <img src="photos/Indra C.JPG" alt="Indra C" />
                     </div>
                     <div class="member-content">
-                        <h3 class="member-name">Yashwanth H T</h3>
-                        <p class="member-role">Treasurer</p>
-                        <p class="member-description">Managing finances and ensuring transparent financial operations.</p>
-                        <div class="member-social">
-                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="team-member fade-in tilt-card" data-category="volunteers">
-                    <div class="member-image">
-                        <i class="fas fa-user-graduate"></i>
-                    </div>
-                    <div class="member-content">
-                        <h3 class="member-name">Aditya Verma M A</h3>
-                        <p class="member-role">Event Coordinator</p>
-                        <p class="member-description">Organizing and coordinating various technical events and workshops.</p>
+                        <h3 class="member-name">Indra C</h3>
+                        <p class="member-role">Dept of MCA</p>
+                        <p class="member-description">
+                            Mentors MCA students in software development projects.
+                        </p>
                         <div class="member-social">
                             <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
                             <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>

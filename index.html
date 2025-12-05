@@ -25,6 +25,171 @@
     <link rel="stylesheet" href="navbar.css" />
 
     <style>
+      /* Navbar Styles */
+    .navbar {
+          background: rgba(15, 23, 42, 0.95);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+          position: fixed;
+          top: 0;
+          width: 100%;
+          z-index: 1000;
+          padding: 1rem 2rem;
+          transition: var(--transition);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+      }
+      
+      .brand {
+          display: flex;
+          align-items: center;
+          text-decoration: none;
+          gap: 1rem;
+      }
+      
+      .logo-img {
+          width: 50px;
+          height: 50px;
+          transition: var(--transition);
+      }
+      
+      .brand:hover .logo-img {
+          transform: scale(1.05);
+      }
+      
+      .site-title {
+          font-family: "Playfair Display", serif;
+          font-size: 1.5rem;
+          font-weight: 600;
+          color: var(--white);
+          letter-spacing: -0.5px;
+      }
+      
+      .nav-links {
+          list-style: none;
+          display: flex;
+          gap: 2rem;
+          margin: 0;
+          padding: 0;
+          align-items: center;
+      }
+      
+      .nav-links a {
+          color: #e2e8f0;
+          text-decoration: none;
+          font-weight: 500;
+          transition: var(--transition);
+          padding: 0.5rem 1rem;
+          border-radius: 8px;
+          position: relative;
+      }
+      
+      .nav-links a::after {
+          content: '';
+          position: absolute;
+          bottom: -5px;
+          left: 50%;
+          width: 0;
+          height: 2px;
+          background: var(--accent-color);
+          transition: var(--transition);
+          transform: translateX(-50%);
+      }
+      
+      .nav-links a:hover::after,
+      .nav-links a.active::after {
+          width: 80%;
+      }
+      
+      .nav-links a:hover,
+      .nav-links a.active {
+          color: var(--accent-color);
+          background: rgba(255, 138, 0, 0.1);
+      }
+      
+      .dropdown {
+          position: relative;
+      }
+      
+      .dropdown-menu {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background: rgba(15, 23, 42, 0.95);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: var(--border-radius);
+          padding: 0.5rem 0;
+          min-width: 200px;
+          box-shadow: var(--shadow-lg);
+          z-index: 1001;
+      }
+      
+      .dropdown:hover .dropdown-menu {
+          display: block;
+      }
+      
+      .dropdown-menu li {
+          list-style: none;
+      }
+      
+      .dropdown-menu a {
+          display: block;
+          padding: 0.75rem 1.5rem;
+          color: #e2e8f0;
+          text-decoration: none;
+          transition: var(--transition);
+          border-radius: 0;
+      }
+      
+      .dropdown-menu a::after {
+          display: none;
+      }
+      
+      .dropdown-menu a:hover {
+          background: rgba(255, 138, 0, 0.1);
+          color: var(--accent-color);
+      }
+      
+      /* Theme Toggle */
+      .theme-toggle {
+          background: rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          border-radius: 50px;
+          padding: 0.5rem 1rem;
+          color: var(--white);
+          cursor: pointer;
+          transition: var(--transition);
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          font-size: 0.875rem;
+      }
+      
+      .theme-toggle:hover {
+          background: rgba(255, 255, 255, 0.2);
+          transform: scale(1.05);
+      }
+      
+      /* Mobile Navigation */
+      .mobile-menu-toggle {
+          display: none;
+          flex-direction: column;
+          cursor: pointer;
+          padding: 0.5rem;
+      }
+      
+      .mobile-menu-toggle span {
+          width: 25px;
+          height: 3px;
+          background: var(--white);
+          margin: 3px 0;
+          transition: var(--transition);
+      }
       /* Hero Section */
       .hero {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -362,36 +527,37 @@
   <body>
     <!-- Navigation -->
     <nav class="navbar">
-      <a href="index.html" class="brand">
-        <img
-          src="Iste logo perfect background removed.png"
-          alt="ISTE Logo"
-          class="logo-img"
-        />
-        <span class="site-title">ISTE</span>
-      </a>
-
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="event.html">Events</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle">Student Chapters</a>
-          <ul class="dropdown-menu">
-            <li><a href="our_team_new.html">Student Core</a></li>
-            <li><a href="istewings.html">ISTE WINGS</a></li>
-            <li><a href="istearcs.html">ISTE ARCS</a></li>
-          </ul>
-        </li>
-        <li><a href="our_team.html">Faculty Chapter</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="aboutus.html">About</a></li>
-      </ul>
-
-      <div class="mobile-menu-toggle" id="mobileToggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+        <a href="index.html" class="brand">
+            <img src="Iste logo perfect background removed.png" alt="ISTE Logo" class="logo-img" />
+            <span class="site-title">ISTE</span>
+        </a>
+        
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="event.html">Events</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle">Student Chapters</a>
+                <ul class="dropdown-menu">
+                    <li><a href="our_team_new.html">Student Core</a></li>
+                    <li><a href="istewings.html">ISTE WINGS</a></li>
+                    <li><a href="istearcs.html">ISTE ARCS</a></li> 
+                </ul>
+            </li>
+            <li><a href="our_team.html" class="active">Faculty Chapter</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="aboutus.html">About</a></li>
+        </ul>
+        
+        <div class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon" id="themeIcon"></i>
+            <span id="themeText">Dark</span>
+        </div>
+        
+        <div class="mobile-menu-toggle" id="mobileToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </nav>
 
     <!-- Hero Section -->
@@ -650,6 +816,37 @@
     <script src="script.js"></script>
     <script src="hero-effects.js"></script>
     <script>
+      // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const themeText = document.getElementById('themeText');
+        const body = document.body;
+        
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            body.setAttribute('data-theme', savedTheme);
+            updateThemeIcon(savedTheme);
+        }
+        
+        themeToggle.addEventListener('click', function() {
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+        
+        function updateThemeIcon(theme) {
+            if (theme === 'dark') {
+                themeIcon.className = 'fas fa-sun';
+                themeText.textContent = 'Light';
+            } else {
+                themeIcon.className = 'fas fa-moon';
+                themeText.textContent = 'Dark';
+            }
+        }
       // Counter Animation
       function animateCounters() {
         const counters = document.querySelectorAll(".counter");
