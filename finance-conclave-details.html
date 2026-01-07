@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finance Conclave - Event Highlights</title>
     <link rel="icon" href="Iste logo perfect background removed.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="navbar.css">
-  <style>
+    <style>
         :root {
             --primary: #0f766e;
             --accent: #fbbf24;
@@ -16,19 +19,23 @@
             --muted: #94a3b8;
             --card-dark: rgba(15, 23, 42, 0.82);
             --gradient: radial-gradient(circle at 20% 20%, rgba(15, 118, 110, .35), transparent 55%),
-                        radial-gradient(circle at 80% 15%, rgba(251, 191, 36, .25), transparent 45%),
-                        #050914;
+                radial-gradient(circle at 80% 15%, rgba(251, 191, 36, .25), transparent 45%),
+                #050914;
         }
-        
+
         [data-theme="light"] {
             --text: #0f172a;
             --muted: #475569;
             --card-dark: #ffffff;
             --gradient: linear-gradient(135deg, #ecfccb 0%, #fefce8 100%);
         }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             background: var(--gradient);
@@ -37,10 +44,17 @@
             overflow-x: hidden;
             transition: background 0.4s ease, color 0.4s ease;
         }
-        
-        main { padding: 110px 0 80px; }
-        .detail-container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
-        
+
+        main {
+            padding: 110px 0 80px;
+        }
+
+        .detail-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
         .detail-hero {
             background: linear-gradient(135deg, rgba(15, 118, 110, 0.95), rgba(251, 191, 36, 0.92));
             border-radius: 32px;
@@ -50,26 +64,31 @@
             overflow: hidden;
             box-shadow: 0 35px 70px rgba(15, 23, 42, 0.35);
         }
-        
+
         .detail-hero::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at top right, rgba(255,255,255,0.35), transparent 55%);
+            background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.35), transparent 55%);
             opacity: 0.8;
         }
-        
-        .hero-content { position: relative; z-index: 2; }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
         .hero-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 0.75rem;
             margin-bottom: 1.1rem;
         }
+
         .hero-tag {
             padding: 0.45rem 1rem;
             border-radius: 999px;
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             font-size: 0.85rem;
             font-weight: 600;
             letter-spacing: 0.4px;
@@ -77,23 +96,27 @@
             align-items: center;
             gap: 0.35rem;
         }
+
         .detail-hero h1 {
             font-size: 2.75rem;
             font-family: 'Playfair Display', serif;
             font-weight: 800;
             margin-bottom: 0.5rem;
         }
+
         .hero-subtitle {
             font-size: 1.05rem;
             max-width: 740px;
             margin-bottom: 1.5rem;
             opacity: 0.95;
         }
+
         .hero-actions {
             display: flex;
             flex-wrap: wrap;
             gap: 1rem;
         }
+
         .hero-actions a {
             display: inline-flex;
             align-items: center;
@@ -104,55 +127,74 @@
             text-decoration: none;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         .hero-actions .primary {
             background: #fff;
             color: #065f46;
             box-shadow: 0 15px 30px rgba(15, 23, 42, 0.25);
         }
+
         .hero-actions .gallery {
-            background: rgba(255,255,255,0.2);
-            border: 1px solid rgba(255,255,255,0.55);
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.55);
             color: #fff;
         }
+
         .hero-actions .gallery:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 24px rgba(255,255,255,0.25);
+            box-shadow: 0 12px 24px rgba(255, 255, 255, 0.25);
         }
+
         .hero-actions .secondary {
-            border: 1px solid rgba(255,255,255,0.55);
+            border: 1px solid rgba(255, 255, 255, 0.55);
             color: #fff;
         }
-        .hero-actions a:hover { transform: translateY(-3px); }
-        
+
+        .hero-actions a:hover {
+            transform: translateY(-3px);
+        }
+
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1.5rem;
             margin: 3rem 0;
         }
+
         .stat-card {
             background: var(--card-dark);
             border-radius: 20px;
             padding: 1.75rem;
-            border: 1px solid rgba(255,255,255,0.08);
-            box-shadow: 0 20px 35px rgba(15,23,42,0.35);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 35px rgba(15, 23, 42, 0.35);
             transition: transform 0.3s ease, border 0.3s ease;
         }
+
         .stat-card:hover {
             transform: translateY(-6px);
-            border-color: rgba(15,118,110,0.4);
+            border-color: rgba(15, 118, 110, 0.4);
         }
-        .stat-card h3 { font-size: 2.4rem; margin-bottom: 0.2rem; }
-        .stat-card span { color: var(--muted); font-size: 0.95rem; letter-spacing: 0.4px; }
-        
+
+        .stat-card h3 {
+            font-size: 2.4rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .stat-card span {
+            color: var(--muted);
+            font-size: 0.95rem;
+            letter-spacing: 0.4px;
+        }
+
         .section {
             background: var(--card-dark);
             border-radius: 24px;
             padding: 2.5rem;
-            border: 1px solid rgba(255,255,255,0.08);
-            box-shadow: 0 25px 45px rgba(15,23,42,0.35);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 25px 45px rgba(15, 23, 42, 0.35);
             margin-bottom: 2.5rem;
         }
+
         .section h2 {
             font-size: 1.7rem;
             margin-bottom: 1rem;
@@ -161,6 +203,7 @@
             align-items: center;
             gap: 0.6rem;
         }
+
         .section h2::after {
             content: '';
             width: 55px;
@@ -168,77 +211,100 @@
             border-radius: 999px;
             background: linear-gradient(90deg, #fbbf24, #fde68a);
         }
+
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 1.5rem;
             margin-top: 1.5rem;
         }
+
         .info-card {
-            background: rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
             padding: 1.75rem;
-            border: 1px solid rgba(255,255,255,0.08);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             transition: transform 0.3s ease, border 0.3s ease;
         }
+
         .info-card:hover {
             transform: translateY(-6px);
-            border-color: rgba(15,118,110,0.35);
+            border-color: rgba(15, 118, 110, 0.35);
         }
-        .info-card h4 { font-size: 1.1rem; margin-bottom: 0.4rem; }
+
+        .info-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.4rem;
+        }
+
         .info-card ul {
             list-style: none;
             margin-top: 0.75rem;
         }
+
         .info-card ul li {
             margin: 0.45rem 0;
             padding-left: 1.25rem;
             position: relative;
             color: var(--muted);
         }
+
         .info-card ul li::before {
             content: '•';
             position: absolute;
             left: 0;
             color: var(--accent);
         }
+
         .day-flow {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 1.25rem;
             margin-top: 1.5rem;
         }
+
         .flow-card {
             padding: 1.5rem;
             border-radius: 18px;
-            background: rgba(15,23,42,0.65);
-            border: 1px solid rgba(251,191,36,0.3);
+            background: rgba(15, 23, 42, 0.65);
+            border: 1px solid rgba(251, 191, 36, 0.3);
             transition: transform 0.3s ease, background 0.3s ease;
         }
+
         .flow-card:hover {
             transform: translateY(-6px);
-            background: rgba(251,191,36,0.22);
+            background: rgba(251, 191, 36, 0.22);
         }
+
         .flow-card span {
             font-size: 0.85rem;
             font-weight: 600;
             color: #fef08a;
         }
-        .flow-card h5 { margin: 0.35rem 0 0.5rem; font-size: 1.08rem; }
-        
+
+        .flow-card h5 {
+            margin: 0.35rem 0 0.5rem;
+            font-size: 1.08rem;
+        }
+
         .media-callout {
             display: flex;
             flex-wrap: wrap;
             gap: 1.5rem;
             align-items: center;
             justify-content: space-between;
-            background: linear-gradient(120deg, rgba(59,130,246,0.15), rgba(15,118,110,0.2));
+            background: linear-gradient(120deg, rgba(59, 130, 246, 0.15), rgba(15, 118, 110, 0.2));
             border-radius: 24px;
             padding: 2rem 2.5rem;
-            border: 1px solid rgba(15,118,110,0.35);
+            border: 1px solid rgba(15, 118, 110, 0.35);
             margin-top: 1.5rem;
         }
-        .media-callout p { flex: 1; color: var(--text); }
+
+        .media-callout p {
+            flex: 1;
+            color: var(--text);
+        }
+
         .media-callout a {
             padding: 0.85rem 1.8rem;
             border-radius: 14px;
@@ -248,48 +314,69 @@
             text-decoration: none;
             box-shadow: 0 12px 25px rgba(15, 23, 42, 0.25);
         }
-        
+
         @media (max-width: 768px) {
-            .detail-hero { padding: 2rem; }
-            .detail-hero h1 { font-size: 2.2rem; }
-            .hero-actions { flex-direction: column; }
-            .hero-actions a { width: 100%; justify-content: center; }
-            .section { padding: 2rem; }
+            .detail-hero {
+                padding: 2rem;
+            }
+
+            .detail-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .hero-actions a {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .section {
+                padding: 2rem;
+            }
         }
-  </style>
+    </style>
 </head>
+
 <body data-theme="dark">
     <nav class="navbar">
         <a href="index.html" class="brand">
             <img src="Iste logo perfect background removed.png" alt="ISTE Logo" class="logo-img" />
-            <span class="site-title">ISTE</span>
+            <span class="site-title">ISTE · PESCE</span>
         </a>
+
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Home</a></li>
             <li><a href="event.html" class="active">Events</a></li>
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle">Student Chapters</a>
+                <a href="#" class="dropdown-toggle">Student Chapters <i class="fas fa-chevron-down"
+                        style="font-size: 0.8em; margin-left: 5px;"></i></a>
                 <ul class="dropdown-menu">
+                    <li><a href="our_team_new.html">Student Core</a></li>
                     <li><a href="istewings.html">ISTE WINGS</a></li>
                     <li><a href="istearcs.html">ISTE ARCS</a></li>
                 </ul>
             </li>
-            <li><a href="our_team.html">Team</a></li>
+            <li><a href="our_team.html">Faculty Chapter</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="aboutus.html">About</a></li>
         </ul>
-        <div class="theme-toggle" id="themeToggle">
-            <i class="fas fa-moon" id="themeIcon"></i>
-            <span id="themeText">Dark</span>
-        </div>
+
         <div class="mobile-menu-toggle" id="mobileToggle">
-            <span></span><span></span><span></span>
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
     </nav>
-    
+
     <main>
         <div class="detail-container">
             <div class="detail-hero">
+                <div class="hero-logo-bg">
+                    <img src="Iste logo perfect background removed.png" alt="ISTE Background Logo">
+                </div>
                 <div class="hero-content">
                     <div class="hero-tags">
                         <span class="hero-tag"><i class="fas fa-location-dot"></i>PESCE Campus</span>
@@ -297,7 +384,8 @@
                         <span class="hero-tag"><i class="fas fa-circle-check"></i>Completed</span>
                     </div>
                     <h1>Finance Conclave</h1>
-                    <p class="hero-subtitle">A day-long immersion into wealth management, fintech disruption, and career roadmaps powered by CFOs, portfolio strategists, and alumni entrepreneurs.</p>
+                    <p class="hero-subtitle">A day-long immersion into wealth management, fintech disruption, and career
+                        roadmaps powered by CFOs, portfolio strategists, and alumni entrepreneurs.</p>
                     <div class="hero-actions">
                         <a href="event.html" class="primary"><i class="fas fa-arrow-left"></i> Back to Events</a>
                         <a href="#" class="gallery"><i class="fas fa-photo-video"></i> View Event Gallery</a>
@@ -305,7 +393,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="stats-grid">
                 <div class="stat-card">
                     <h3>280+</h3>
@@ -324,14 +412,18 @@
                     <span>Partner institutions & firms</span>
                 </div>
             </div>
-            
+
             <section class="section overview">
                 <h2>Experience Overview</h2>
-                <p>The conclave decoded personal finance, venture funding, ESG investing, and fintech product building. Attendees sat through narrative-rich sessions that combined spreadsheets with storytelling from leaders who manage crores in capital.</p>
-                <p>Interactive kiosks let students try robo-advisory dashboards, learn Bloomberg-style shortcuts, and understand sustainable investing metrics.</p>
-                <p>A curated networking lunch paired aspiring analysts with mentors so the conversations extended beyond the stage and into internships, mentorships, and research projects.</p>
+                <p>The conclave decoded personal finance, venture funding, ESG investing, and fintech product building.
+                    Attendees sat through narrative-rich sessions that combined spreadsheets with storytelling from
+                    leaders who manage crores in capital.</p>
+                <p>Interactive kiosks let students try robo-advisory dashboards, learn Bloomberg-style shortcuts, and
+                    understand sustainable investing metrics.</p>
+                <p>A curated networking lunch paired aspiring analysts with mentors so the conversations extended beyond
+                    the stage and into internships, mentorships, and research projects.</p>
             </section>
-            
+
             <section class="section">
                 <h2>Quick Highlights</h2>
                 <div class="info-grid">
@@ -346,7 +438,8 @@
                     </div>
                     <div class="info-card">
                         <h4>Speaker Bench</h4>
-                        <p>Regional CFOs, equity researchers, startup funders, and alumni from Big Four firms shared tools, frameworks, and hiring cues.</p>
+                        <p>Regional CFOs, equity researchers, startup funders, and alumni from Big Four firms shared
+                            tools, frameworks, and hiring cues.</p>
                         <p>Live Q&A segments ensured students left with personalized advice.</p>
                     </div>
                     <div class="info-card">
@@ -355,11 +448,11 @@
                             <li>60+ students shortlisted for mentorship cohorts</li>
                             <li>Hands-on investing workbook issued to all</li>
                             <li>Finance club gained five new corporate partners</li>
-        </ul>
-      </div>
-      </div>
-    </section>
-            
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
             <section class="section experience">
                 <h2>Conclave Flow</h2>
                 <div class="day-flow">
@@ -382,48 +475,42 @@
                         <span>04:30 PM</span>
                         <h5>Investment Roundtable</h5>
                         <p>Participants tested asset allocation strategies with mentors giving instant critique.</p>
-    </div>
-  </div>
-  
+                    </div>
+                </div>
+
                 <div class="media-callout">
-                    <p>Looking for session decks, financial models, or photo stories for your club newsletter? Access the curated archive.</p>
+                    <p>Looking for session decks, financial models, or photo stories for your club newsletter? Access
+                        the curated archive.</p>
                     <a href="#"><i class="fas fa-photo-video"></i> View Conclave Archive</a>
                 </div>
             </section>
         </div>
     </main>
-    
-    <script src="navbar-script.js"></script>
-    <script>
-        const themeToggle = document.getElementById('themeToggle');
-        const themeIcon = document.getElementById('themeIcon');
-        const themeText = document.getElementById('themeText');
-        const body = document.body;
-        const storedTheme = localStorage.getItem('theme');
-        
-        if (storedTheme) {
-            body.setAttribute('data-theme', storedTheme);
-            updateThemeButton(storedTheme);
-        }
-        
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = body.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
-            const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            body.setAttribute('data-theme', nextTheme);
-            localStorage.setItem('theme', nextTheme);
-            updateThemeButton(nextTheme);
-        });
-        
-        function updateThemeButton(theme) {
-            if (theme === 'light') {
-                themeIcon.className = 'fas fa-sun';
-                themeText.textContent = 'Light';
-            } else {
-                themeIcon.className = 'fas fa-moon';
-                themeText.textContent = 'Dark';
-            }
-        }
-    </script>
-</body>
-</html>
 
+
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-social">
+                <a href="https://www.instagram.com/pesce.iste/" target="_blank" rel="noopener" aria-label="Instagram">
+                    <img src="instalogo.png" alt="Instagram logo" />
+                </a>
+                <a href="https://www.linkedin.com/company/iste-pesce/" target="_blank" rel="noopener"
+                    aria-label="LinkedIn">
+                    <img src="linkedinlogo.png" alt="LinkedIn logo" />
+                </a>
+                <a href="mailto:iste@pesce.ac.in" aria-label="Email">
+                    <img src="maillogo.png" alt="Email icon" />
+                </a>
+                <a href="https://pesce.ac.in/" target="_blank" rel="noopener" class="pesce-link">
+                    <i class="fas fa-building-columns"></i>
+                </a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ISTE PESCE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

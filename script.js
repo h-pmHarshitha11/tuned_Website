@@ -1,6 +1,6 @@
 // ISTE Website - Dynamic Features and Interactions
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Initialize all components
     initNavigation();
     initScrollEffects();
@@ -9,22 +9,23 @@ document.addEventListener('DOMContentLoaded', function() {
     initSmoothScrolling();
     initFormValidation();
     initLazyLoading();
+    animateCounters();
 });
 
 // Navigation Management
 function initNavigation() {
     const navbar = document.querySelector('.navbar');
     const navLinks = document.querySelectorAll('.nav-links a');
-    
+
     // Add scroll effect to navbar
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         if (window.scrollY > 100) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
     });
-    
+
     // Set active navigation link
     const currentPage = window.location.pathname.split('/').pop();
     navLinks.forEach(link => {
@@ -38,23 +39,23 @@ function initNavigation() {
 function initMobileMenu() {
     const mobileToggle = document.getElementById('mobileToggle');
     const navLinks = document.getElementById('navLinks');
-    
+
     if (mobileToggle && navLinks) {
-        mobileToggle.addEventListener('click', function() {
+        mobileToggle.addEventListener('click', function () {
             navLinks.classList.toggle('active');
             mobileToggle.classList.toggle('active');
         });
-        
+
         // Close mobile menu when clicking on a link
-        navLinks.addEventListener('click', function(e) {
+        navLinks.addEventListener('click', function (e) {
             if (e.target.tagName === 'A') {
                 navLinks.classList.remove('active');
                 mobileToggle.classList.remove('active');
             }
         });
-        
+
         // Close mobile menu when clicking outside
-        document.addEventListener('click', function(e) {
+        document.addEventListener('click', function (e) {
             if (!navbar.contains(e.target)) {
                 navLinks.classList.remove('active');
                 mobileToggle.classList.remove('active');
@@ -67,23 +68,23 @@ function initMobileMenu() {
 function initScrollEffects() {
     // Parallax effect for hero sections
     const heroElements = document.querySelectorAll('.hero');
-    
-    window.addEventListener('scroll', function() {
+
+    window.addEventListener('scroll', function () {
         const scrolled = window.pageYOffset;
         const rate = scrolled * -0.5;
-        
+
         heroElements.forEach(hero => {
             hero.style.transform = `translateY(${rate}px)`;
         });
     });
-    
+
     // Navbar background change on scroll
     const navbar = document.querySelector('.navbar');
     let lastScrollTop = 0;
-    
-    window.addEventListener('scroll', function() {
+
+    window.addEventListener('scroll', function () {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
+
         if (scrollTop > lastScrollTop && scrollTop > 100) {
             // Scrolling down
             navbar.style.transform = 'translateY(-100%)';
@@ -91,7 +92,7 @@ function initScrollEffects() {
             // Scrolling up
             navbar.style.transform = 'translateY(0)';
         }
-        
+
         lastScrollTop = scrollTop;
     });
 }
@@ -102,8 +103,8 @@ function initAnimations() {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
-    
-    const observer = new IntersectionObserver(function(entries) {
+
+    const observer = new IntersectionObserver(function (entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animate-fadeInUp');
@@ -112,7 +113,7 @@ function initAnimations() {
             }
         });
     }, observerOptions);
-    
+
     // Observe elements for animation
     const animatedElements = document.querySelectorAll('.feature-card, .event-card, .team-member, .service-card');
     animatedElements.forEach(element => {
@@ -143,18 +144,18 @@ function initSmoothScrolling() {
 // Form Validation
 function initFormValidation() {
     const forms = document.querySelectorAll('form');
-    
+
     forms.forEach(form => {
-        form.addEventListener('submit', function(e) {
+        form.addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             const formData = new FormData(form);
             const data = Object.fromEntries(formData);
-            
+
             // Basic validation
             let isValid = true;
             const requiredFields = form.querySelectorAll('[required]');
-            
+
             requiredFields.forEach(field => {
                 if (!field.value.trim()) {
                     showFieldError(field, 'This field is required');
@@ -163,7 +164,7 @@ function initFormValidation() {
                     clearFieldError(field);
                 }
             });
-            
+
             // Email validation
             const emailFields = form.querySelectorAll('input[type="email"]');
             emailFields.forEach(field => {
@@ -172,7 +173,7 @@ function initFormValidation() {
                     isValid = false;
                 }
             });
-            
+
             if (isValid) {
                 submitForm(form, data);
             }
@@ -211,7 +212,7 @@ function submitForm(form, data) {
     const originalText = submitBtn.textContent;
     submitBtn.textContent = 'Sending...';
     submitBtn.disabled = true;
-    
+
     // Simulate form submission (replace with actual API call)
     setTimeout(() => {
         showNotification('Message sent successfully!', 'success');
@@ -224,7 +225,7 @@ function submitForm(form, data) {
 // Lazy Loading for Images
 function initLazyLoading() {
     const images = document.querySelectorAll('img[data-src]');
-    
+
     const imageObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -235,7 +236,7 @@ function initLazyLoading() {
             }
         });
     });
-    
+
     images.forEach(img => {
         img.classList.add('skeleton');
         imageObserver.observe(img);
@@ -252,7 +253,7 @@ function showNotification(message, type = 'info') {
             <button class="notification-close">&times;</button>
         </div>
     `;
-    
+
     // Add styles
     notification.style.cssText = `
         position: fixed;
@@ -267,19 +268,19 @@ function showNotification(message, type = 'info') {
         transform: translateX(100%);
         transition: transform 0.3s ease;
     `;
-    
+
     document.body.appendChild(notification);
-    
+
     // Animate in
     setTimeout(() => {
         notification.style.transform = 'translateX(0)';
     }, 100);
-    
+
     // Close button
     notification.querySelector('.notification-close').addEventListener('click', () => {
         closeNotification(notification);
     });
-    
+
     // Auto close after 5 seconds
     setTimeout(() => {
         closeNotification(notification);
@@ -299,19 +300,19 @@ function closeNotification(notification) {
 function initSearch() {
     const searchInput = document.querySelector('#search-input');
     const searchResults = document.querySelector('#search-results');
-    
+
     if (searchInput) {
         let searchTimeout;
-        
-        searchInput.addEventListener('input', function() {
+
+        searchInput.addEventListener('input', function () {
             clearTimeout(searchTimeout);
             const query = this.value.trim();
-            
+
             if (query.length < 2) {
                 hideSearchResults();
                 return;
             }
-            
+
             searchTimeout = setTimeout(() => {
                 performSearch(query);
             }, 300);
@@ -324,7 +325,7 @@ function performSearch(query) {
     // For now, we'll search through page content
     const searchableElements = document.querySelectorAll('h1, h2, h3, p, .card');
     const results = [];
-    
+
     searchableElements.forEach(element => {
         const text = element.textContent.toLowerCase();
         if (text.includes(query.toLowerCase())) {
@@ -335,14 +336,14 @@ function performSearch(query) {
             });
         }
     });
-    
+
     displaySearchResults(results);
 }
 
 function displaySearchResults(results) {
     const searchResults = document.querySelector('#search-results');
     if (!searchResults) return;
-    
+
     if (results.length === 0) {
         searchResults.innerHTML = '<p>No results found</p>';
     } else {
@@ -353,7 +354,7 @@ function displaySearchResults(results) {
             </div>
         `).join('');
     }
-    
+
     searchResults.style.display = 'block';
 }
 
@@ -367,17 +368,17 @@ function hideSearchResults() {
 // Counter Animation
 function animateCounters() {
     const counters = document.querySelectorAll('.counter');
-    
+
     counters.forEach(counter => {
         const target = parseInt(counter.dataset.target);
         const duration = 2000; // 2 seconds
         const increment = target / (duration / 16); // 60fps
         let current = 0;
-        
+
         const timer = setInterval(() => {
             current += increment;
             counter.textContent = Math.floor(current);
-            
+
             if (current >= target) {
                 counter.textContent = target;
                 clearInterval(timer);
@@ -408,10 +409,10 @@ function initBackToTop() {
         z-index: 1000;
         box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
     `;
-    
+
     document.body.appendChild(backToTopBtn);
-    
-    window.addEventListener('scroll', function() {
+
+    window.addEventListener('scroll', function () {
         if (window.pageYOffset > 300) {
             backToTopBtn.style.opacity = '1';
             backToTopBtn.style.visibility = 'visible';
@@ -420,8 +421,8 @@ function initBackToTop() {
             backToTopBtn.style.visibility = 'hidden';
         }
     });
-    
-    backToTopBtn.addEventListener('click', function() {
+
+    backToTopBtn.addEventListener('click', function () {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
@@ -432,33 +433,15 @@ function initBackToTop() {
 // Initialize back to top button
 initBackToTop();
 
-// Theme Toggle (if needed)
-function initThemeToggle() {
-    const themeToggle = document.querySelector('#theme-toggle');
-    const body = document.body;
-    
-    if (themeToggle) {
-        // Check for saved theme preference
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            body.classList.add(savedTheme);
-        }
-        
-        themeToggle.addEventListener('click', function() {
-            body.classList.toggle('dark-theme');
-            const isDark = body.classList.contains('dark-theme');
-            localStorage.setItem('theme', isDark ? 'dark-theme' : '');
-        });
-    }
-}
+
 
 // Performance Monitoring
 function initPerformanceMonitoring() {
     // Monitor page load time
-    window.addEventListener('load', function() {
+    window.addEventListener('load', function () {
         const loadTime = performance.now();
         console.log(`Page loaded in ${loadTime.toFixed(2)}ms`);
-        
+
         // Send analytics data (replace with actual analytics service)
         if (typeof gtag !== 'undefined') {
             gtag('event', 'page_load_time', {
@@ -469,19 +452,19 @@ function initPerformanceMonitoring() {
 }
 
 // Error Handling
-window.addEventListener('error', function(e) {
+window.addEventListener('error', function (e) {
     console.error('JavaScript error:', e.error);
     // Send error to monitoring service
 });
 
 // Service Worker Registration (for PWA features)
 if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
+    window.addEventListener('load', function () {
         navigator.serviceWorker.register('/sw.js')
-            .then(function(registration) {
+            .then(function (registration) {
                 console.log('ServiceWorker registration successful');
             })
-            .catch(function(err) {
+            .catch(function (err) {
                 console.log('ServiceWorker registration failed');
             });
     });
